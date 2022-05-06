@@ -1,0 +1,20 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_75/defects4j_Math_75/src/main/java/org/apache/commons/math/stat/Frequency.java	2022-05-03 18:45:48.141254402 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_75/mcrepair_sfl/patch/susp_0/donor_4/patch_0/Frequency.java	2022-05-03 18:47:31.081853931 -0400
+@@ -300,7 +300,15 @@
+      */
+     @Deprecated
+     public double getPct(Object v) {
+-        return getCumPct((Comparable<?>) v);
++        final long sumFreq = getSumFreq();
++if (sumFreq == 0) {
++return Double.NaN;
++}
++else {
++return (double) getCount(v) / (double) sumFreq;
++}
++
++
+     }
+ 
+     /**
+

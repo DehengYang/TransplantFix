@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_104/defects4j_Math_104/src/java/org/apache/commons/math/special/Gamma.java	2022-05-02 18:21:26.120534019 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_104/mcrepair_sfl/patch/susp_3/donor_18/patch_4/Gamma.java	2022-05-02 19:07:29.187600189 -0400
+@@ -153,7 +153,8 @@
+                                            int maxIterations) 
+         throws MathException
+     {
+-        double ret;
++        x = org.apache.commons.math.util.MathUtils.nextAfter(x, Double.POSITIVE_INFINITY);
++double ret;
+ 
+         if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {
+             ret = Double.NaN;
+

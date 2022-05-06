@@ -1,0 +1,19 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_53/defects4j_Math_53/src/main/java/org/apache/commons/math/complex/Complex.java	2022-05-03 16:56:12.443505920 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_53/mcrepair_sfl/patch/susp_0/donor_5/patch_0/Complex.java	2022-05-03 16:59:29.268298432 -0400
+@@ -150,7 +150,14 @@
+     public Complex add(Complex rhs)
+         throws NullArgumentException {
+         MathUtils.checkNotNull(rhs);
+-        return createComplex(real + rhs.getReal(),
++        if (isNaN || rhs.isNaN) {
++return NaN;
++}
++else {
++double imaginary = rhs.getReal();
++}
++
++return createComplex(real + rhs.getReal(),
+             imaginary + rhs.getImaginary());
+     }
+ 
+

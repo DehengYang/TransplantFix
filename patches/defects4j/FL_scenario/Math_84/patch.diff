@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_84/defects4j_Math_84/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java	2022-05-02 17:32:45.738495941 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_84/mcrepair_sfl/patch/susp_0/donor_0/patch_32/MultiDirectional.java	2022-05-02 17:36:47.301250940 -0400
+@@ -87,7 +87,7 @@
+ 
+             // compute the contracted simplex
+             final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+-            if (comparator.compare(contracted, best) < 0) {
++            if (comparator.compare(contracted, reflected) <= 0) {
+                 // accept the contracted simplex
+ 
+             // check convergence
+

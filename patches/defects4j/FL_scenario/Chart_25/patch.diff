@@ -1,0 +1,25 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_25/defects4j_Chart_25/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2022-05-03 13:25:08.637075741 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_25/mcrepair_sfl/patch/susp_0/donor_7/patch_5/StatisticalBarRenderer.java	2022-05-03 13:52:19.766514112 -0400
+@@ -198,10 +198,7 @@
+ 
+         // defensive check
+         if (!(data instanceof StatisticalCategoryDataset)) {
+-            throw new IllegalArgumentException(
+-                "Requires StatisticalCategoryDataset.");
+-        }
+-        StatisticalCategoryDataset statData = (StatisticalCategoryDataset) data;
++            StatisticalCategoryDataset statData = (StatisticalCategoryDataset) data;
+ 
+         PlotOrientation orientation = plot.getOrientation();
+         if (orientation == PlotOrientation.HORIZONTAL) {
+@@ -212,6 +209,9 @@
+             drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, 
+                     statData, row, column);
+         }
++        throw new IllegalArgumentException(
++                "Requires StatisticalCategoryDataset.");
++        }
+     }
+                 
+     /**
+

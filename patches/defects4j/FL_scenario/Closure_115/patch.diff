@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_115/defects4j_Closure_115/src/com/google/javascript/jscomp/FunctionInjector.java	2022-05-04 11:00:47.257712978 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_115/mcrepair_sfl/patch/susp_0/donor_14/patch_34/FunctionInjector.java	2022-05-04 11:30:13.526360225 -0400
+@@ -708,6 +708,7 @@
+     // Functions called via 'call' and 'apply' have a this-object as
+     // the first parameter, but this is not part of the called function's
+     // parameter list.
++hasSideEffects = false;
+     if (!callNode.getFirstChild().isName()) {
+       if (NodeUtil.isFunctionObjectCall(callNode)) {
+         // TODO(johnlenz): Support replace this with a value.
+

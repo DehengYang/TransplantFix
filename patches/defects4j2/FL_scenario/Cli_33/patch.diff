@@ -1,0 +1,24 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_33/defects4j2_Cli_33/src/main/java/org/apache/commons/cli/HelpFormatter.java	2022-05-04 05:16:14.218963894 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_33/mcrepair_sfl/patch/susp_2/donor_13/patch_0/HelpFormatter.java	2022-05-04 05:53:42.331967530 -0400
+@@ -712,7 +712,19 @@
+      */
+     public void printWrapped(PrintWriter pw, int width, String text)
+     {
+-        printWrapped(pw, width, 0, text);
++        int pos;
++if (((width = text.indexOf('\n', width)) != -1 && width <= width)
++                || ((width = text.indexOf('\t', width)) != -1 && width <= width)) {
++return ;
++}
++else {
++if (width + width >= text.length()) {
++return ;
++}
++
++}
++
++printWrapped(pw, width, 0, text);
+     }
+ 
+     /**
+

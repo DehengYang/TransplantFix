@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_76/defects4j2_JacksonDatabind_76/src/main/java/com/fasterxml/jackson/databind/deser/BuilderBasedDeserializer.java	2022-05-05 00:27:45.103675427 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_76/mcrepair_pfl/patch/susp_0/donor_0/patch_34/BuilderBasedDeserializer.java	2022-05-05 00:30:06.041927408 -0400
+@@ -580,6 +580,8 @@
+             // creator property?
+             SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+             if (creatorProp != null) {
++if (buffer.assignParameter(creatorProp,creatorProp.deserialize(p,ctxt)))  
++
+                 if (buffer.assignParameter(creatorProp, creatorProp.deserialize(p, ctxt))) {
+                     t = p.nextToken();
+                     Object bean;
+

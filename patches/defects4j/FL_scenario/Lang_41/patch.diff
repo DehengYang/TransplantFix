@@ -1,0 +1,23 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_41/defects4j_Lang_41/src/java/org/apache/commons/lang/ClassUtils.java	2022-05-03 23:03:22.120992948 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_41/mcrepair_sfl/patch/susp_1/donor_0/patch_3/ClassUtils.java	2022-05-03 23:16:29.090767030 -0400
+@@ -169,7 +169,8 @@
+         if (cls == null) {
+             return StringUtils.EMPTY;
+         }
+-        return getShortClassName(cls.getName());
++        return org.apache.commons.lang.ClassUtils.getShortCanonicalName(cls.getName());
++
+     }
+ 
+     /**
+@@ -229,7 +230,8 @@
+         if (cls == null) {
+             return StringUtils.EMPTY;
+         }
+-        return getPackageName(cls.getName());
++        return org.apache.commons.lang.ClassUtils.getPackageCanonicalName(cls.getName());
++
+     }
+ 
+     /**
+

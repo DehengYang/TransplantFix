@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_80/defects4j_Math_80/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2022-05-04 04:54:37.369423938 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_80/mcrepair_sfl/patch/susp_0/donor_0/patch_0/EigenDecompositionImpl.java	2022-05-04 04:55:48.420598725 -0400
+@@ -837,7 +837,7 @@
+         }
+ 
+         // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
++        
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);
+

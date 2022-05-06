@@ -1,0 +1,10 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_25/defects4j2_Compress_25/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java	2022-05-03 09:49:56.185007511 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_25/mcrepair_sfl/patch/susp_0/donor_29/patch_0/ZipArchiveInputStream.java	2022-05-03 10:16:46.571325192 -0400
+@@ -401,6 +401,7 @@
+      */
+     private int readStored(byte[] buffer, int offset, int length) throws IOException {
+ 
++in.read(buf.array());
+         if (current.hasDataDescriptor) {
+             if (lastStoredEntry == null) {
+                 readStoredEntry();

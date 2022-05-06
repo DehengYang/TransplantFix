@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Closure_152/defects4j2_Closure_152/src/com/google/javascript/rhino/jstype/FunctionType.java	2022-05-03 00:29:53.388754695 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Closure_152/mcrepair_pfl/patch/susp_0/donor_5/patch_0/FunctionType.java	2022-05-03 00:39:35.656763983 -0400
+@@ -862,7 +862,8 @@
+   JSType resolveInternal(ErrorReporter t, StaticScope<JSType> scope) {
+     setResolvedTypeInternal(this);
+ 
+-    call = (ArrowType) safeResolve(call, t, scope);
++    ObjectType typeOfThis = getImplicitPrototype();
++call = (ArrowType) safeResolve(call, t, scope);
+     prototype = (FunctionPrototypeType) safeResolve(prototype, t, scope);
+ 
+     // Warning about typeOfThis if it doesn't resolve to an ObjectType

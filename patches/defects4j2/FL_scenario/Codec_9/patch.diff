@@ -1,0 +1,10 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_9/defects4j2_Codec_9/src/java/org/apache/commons/codec/binary/Base64.java	2022-05-04 16:50:30.444625103 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_9/mcrepair_sfl/patch/susp_0/donor_39/patch_0/Base64.java	2022-05-04 17:03:55.657758968 -0400
+@@ -820,6 +820,7 @@
+      * @since 1.4
+      */
+     public static byte[] encodeBase64(byte[] binaryData, boolean isChunked, boolean urlSafe, int maxResultSize) {
++int MIME_CHUNK_SIZE = CHUNK_SEPARATOR.length;
+         if (binaryData == null || binaryData.length == 0) {
+             return binaryData;
+         }

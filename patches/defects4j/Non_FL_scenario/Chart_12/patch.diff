@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_12/defects4j_Chart_12/source/org/jfree/chart/plot/MultiplePiePlot.java	2022-05-04 03:09:48.011343404 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_12/mcrepair_pfl/patch/susp_0/donor_44/patch_8/MultiplePiePlot.java	2022-05-04 03:22:37.986131030 -0400
+@@ -154,7 +154,8 @@
+         this.pieChart.setTitle(seriesTitle);
+         this.aggregatedItemsKey = "Other";
+         this.aggregatedItemsPaint = Color.lightGray;
+-        this.sectionPaints = new HashMap();
++        setDataset(dataset);
++this.sectionPaints = new HashMap();
+     }
+ 
+     /**

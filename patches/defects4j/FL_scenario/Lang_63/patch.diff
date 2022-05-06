@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_63/defects4j_Lang_63/src/java/org/apache/commons/lang/time/DurationFormatUtils.java	2022-05-03 23:49:12.327072978 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_63/mcrepair_sfl/patch/susp_0/donor_0/patch_0/DurationFormatUtils.java	2022-05-03 23:51:10.818954395 -0400
+@@ -320,7 +320,7 @@
+         minutes -= reduceAndCorrect(start, end, Calendar.MINUTE, minutes);
+         hours -= reduceAndCorrect(start, end, Calendar.HOUR_OF_DAY, hours);
+         days -= reduceAndCorrect(start, end, Calendar.DAY_OF_MONTH, days);
+-        months -= reduceAndCorrect(start, end, Calendar.MONTH, months);
++        
+         years -= reduceAndCorrect(start, end, Calendar.YEAR, years);
+ 
+         // This next block of code adds in values that 
+

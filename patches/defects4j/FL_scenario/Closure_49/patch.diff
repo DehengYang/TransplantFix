@@ -1,0 +1,17 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_49/defects4j_Closure_49/src/com/google/javascript/rhino/Node.java	2022-05-03 20:03:30.253100899 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_49/mcrepair_sfl/patch/susp_0/donor_2/patch_4/Node.java	2022-05-03 22:03:35.288169060 -0400
+@@ -1564,11 +1564,8 @@
+   public String checkTreeEquals(Node node2) {
+       NodeMismatch diff = checkTreeEqualsImpl(node2);
+       if (diff != null) {
+-        return "Node tree inequality:" +
+-            "\nTree1:\n" + toStringTree() +
+-            "\n\nTree2:\n" + node2.toStringTree() +
+-            "\n\nSubtree1: " + diff.nodeA.toStringTree() +
+-            "\n\nSubtree2: " + diff.nodeB.toStringTree();
++        checkTreeEqualsImpl(node2);
++
+       }
+       return null;
+   }
+

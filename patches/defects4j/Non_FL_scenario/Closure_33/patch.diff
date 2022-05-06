@@ -1,0 +1,17 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_33/defects4j_Closure_33/src/com/google/javascript/rhino/jstype/PrototypeObjectType.java	2022-05-04 07:16:31.368125116 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_33/mcrepair_pfl/patch/susp_0/donor_21/patch_0/PrototypeObjectType.java	2022-05-04 07:32:57.811510967 -0400
+@@ -564,6 +564,13 @@
+     // We want to modify the object literal to match the constraint, by
+     // taking any each property on the record and trying to match
+     // properties on this object.
++if (constraintObj.hasReferenceName() ||
++        isNativeObjectType() ||
++        constraintObj.isFunctionPrototypeType()) {
++constraintObj = new PrototypeObjectType(
++          registry, this.getReferenceName() + ".prototype", constraintObj);
++}
++
+     if (constraintObj.isRecordType()) {
+       for (String prop : constraintObj.getOwnPropertyNames()) {
+         JSType propType = constraintObj.getPropertyType(prop);
+

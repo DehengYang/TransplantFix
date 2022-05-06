@@ -1,0 +1,26 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_22/defects4j_Math_22/src/main/java/org/apache/commons/math3/distribution/UniformRealDistribution.java	2022-05-04 18:47:04.063889660 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_22/mcrepair_sfl/patch/susp_1/donor_0/patch_1/UniformRealDistribution.java	2022-05-04 18:52:59.055501292 -0400
+@@ -181,7 +181,8 @@
+ 
+     /** {@inheritDoc} */
+     public boolean isSupportUpperBoundInclusive() {
+-        return false;
++        return true;
++
+     }
+ 
+     /**
+
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_22/defects4j_Math_22/src/main/java/org/apache/commons/math3/distribution/FDistribution.java	2022-05-04 18:47:04.063889660 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_22/mcrepair_sfl/patch/susp_1/donor_0/patch_1/FDistribution.java	2022-05-04 18:52:59.059501422 -0400
+@@ -272,7 +272,8 @@
+ 
+     /** {@inheritDoc} */
+     public boolean isSupportLowerBoundInclusive() {
+-        return true;
++        return false;
++
+     }
+ 
+     /** {@inheritDoc} */
+

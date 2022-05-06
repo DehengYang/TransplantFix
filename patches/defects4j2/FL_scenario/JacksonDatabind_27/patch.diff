@@ -1,0 +1,44 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_27/defects4j2_JacksonDatabind_27/src/main/java/com/fasterxml/jackson/databind/deser/BeanDeserializer.java	2022-05-04 13:47:25.004034317 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_27/mcrepair_sfl/patch/susp_0/donor_0/patch_0/BeanDeserializer.java	2022-05-04 13:50:31.584302515 -0400
+@@ -787,39 +787,7 @@
+             p.nextToken(); // to point to value
+             // creator property?
+             SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
+-            if (creatorProp != null) {
+-                // first: let's check to see if this might be part of value with external type id:
+-                // 11-Sep-2015, tatu: Important; do NOT pass buffer as last arg, but null,
+-                //   since it is not the bean
+-                if (ext.handlePropertyValue(p, ctxt, propName, buffer)) {
+-                    ;
+-                } else {
+-                    // Last creator property to set?
+-                    if (buffer.assignParameter(creatorProp, _deserializeWithErrorWrapping(p, ctxt, creatorProp))) {
+-                        t = p.nextToken(); // to move to following FIELD_NAME/END_OBJECT
+-                        Object bean;
+-                        try {
+-                            bean = creator.build(ctxt, buffer);
+-                        } catch (Exception e) {
+-                            wrapAndThrow(e, _beanType.getRawClass(), propName, ctxt);
+-                            continue; // never gets here
+-                        }
+-                        // if so, need to copy all remaining tokens into buffer
+-                        while (t == JsonToken.FIELD_NAME) {
+-                            p.nextToken(); // to skip name
+-                            tokens.copyCurrentStructure(p);
+-                            t = p.nextToken();
+-                        }
+-                        if (bean.getClass() != _beanType.getRawClass()) {
+-                            // !!! 08-Jul-2011, tatu: Could theoretically support; but for now
+-                            //   it's too complicated, so bail out
+-                            throw ctxt.mappingException("Can not create polymorphic instances with unwrapped values");
+-                        }
+-                        return ext.complete(p, ctxt, bean);
+-                    }
+-                }
+-                continue;
+-            }
++            
+             // Object Id property?
+             if (buffer.readIdProperty(propName)) {
+                 continue;
+

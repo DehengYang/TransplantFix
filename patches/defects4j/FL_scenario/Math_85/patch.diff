@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_85/defects4j_Math_85/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2022-05-02 18:45:46.933589534 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_85/mcrepair_sfl/patch/susp_1/donor_26/patch_82/UnivariateRealSolverUtils.java	2022-05-02 20:01:36.380292948 -0400
+@@ -195,6 +195,7 @@
+         } while ((fa * fb > 0.0) && (numIterations < maximumIterations) && 
+                 ((a > lowerBound) || (b < upperBound)));
+    
++fb = 0.5 * (b + fa);
+         if (fa * fb >= 0.0 ) {
+             throw new ConvergenceException(
+                       "number of iterations={0}, maximum iterations={1}, " +
+

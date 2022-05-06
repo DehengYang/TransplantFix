@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Time_14/defects4j_Time_14/src/main/java/org/joda/time/MonthDay.java	2022-05-03 18:27:53.787079573 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Time_14/mcrepair_sfl/patch/susp_2/donor_5/patch_2/MonthDay.java	2022-05-03 18:42:11.522459261 -0400
+@@ -516,7 +516,8 @@
+             return this;
+         }
+         int[] newValues = getValues();
+-        newValues = getField(index).add(this, index, newValues, amount);
++        newValues = getField(index).addWrapPartial(this, index, newValues, amount);
++
+         return new MonthDay(this, newValues);
+     }
+ 
+

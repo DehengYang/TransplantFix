@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_81/defects4j_Math_81/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2022-05-04 07:56:15.948310719 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_81/mcrepair_sfl/patch/susp_0/donor_18/patch_4/EigenDecompositionImpl.java	2022-05-04 08:29:58.874664888 -0400
+@@ -1429,7 +1429,8 @@
+      */
+     private void computeShiftIncrement(final int start, final int end, final int deflated) {
+ 
+-        final double cnst1 = 0.563;
++        double dN1 = Math.abs(work[0]);
++final double cnst1 = 0.563;
+         final double cnst2 = 1.010;
+         final double cnst3 = 1.05;
+ 

@@ -1,0 +1,17 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_97/defects4j_Math_97/src/java/org/apache/commons/math/analysis/BrentSolver.java	2022-05-03 19:01:02.534110740 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_97/mcrepair_sfl/patch/susp_0/donor_15/patch_56/BrentSolver.java	2022-05-03 19:20:27.522157671 -0400
+@@ -138,7 +138,12 @@
+         if (sign >= 0) {
+             // check if either value is close to a zero
+                 // neither value is close to zero and min and max do not bracket root.
+-                throw new IllegalArgumentException
++                if (Math.abs(sign) <= functionValueAccuracy) {
++verifyInterval(min,max);
++return result;
++}
++
++throw new IllegalArgumentException
+                 ("Function values at endpoints do not have different signs." +
+                         "  Endpoints: [" + min + "," + max + "]" + 
+                         "  Values: [" + yMin + "," + yMax + "]");
+

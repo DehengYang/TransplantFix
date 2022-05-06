@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_80/defects4j_Math_80/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java	2022-05-04 03:53:23.061252633 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_80/mcrepair_pfl/patch/susp_0/donor_7/patch_40/EigenDecompositionImpl.java	2022-05-04 04:40:31.799641229 -0400
+@@ -1136,7 +1136,8 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[i + k];
+-                    work[i + k] = work[j - k];
++                    work[j + 2] = work[i] * tmp;
++
+                     work[j - k] = tmp;
+                 }
+                 j -= 4;
+

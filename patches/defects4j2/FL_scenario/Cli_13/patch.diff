@@ -1,0 +1,27 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_13/defects4j2_Cli_13/src/java/org/apache/commons/cli2/option/GroupImpl.java	2022-05-02 18:28:22.020852601 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_13/mcrepair_sfl/patch/susp_1/donor_39/patch_0/GroupImpl.java	2022-05-02 18:46:25.235902081 -0400
+@@ -126,19 +126,13 @@
+ 
+         // check if bursting is required
+         for (final Iterator iter = tailMap.values().iterator(); iter.hasNext();) {
+-            final Option option = (Option) iter.next();
++            
+ 
+-            if (option.canProcess(commandLine, arg)) {
+-                return true;
+-            }
+-        }
++final Option option = (Option) iter.next();
++if (option != null) {
++}
+ 
+-        if (commandLine.looksLikeOption(arg)) {
+-            return false;
+-        }
+ 
+-        // anonymous argument(s) means we can process it
+-        if (anonymous.size() > 0) {
+             return true;
+         }
+ 
+

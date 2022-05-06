@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_45/defects4j2_Compress_45/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java	2022-05-03 00:52:21.384336542 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_45/mcrepair_sfl/patch/susp_2/donor_8/patch_0/TarUtils.java	2022-05-03 02:17:04.937721699 -0400
+@@ -516,7 +516,11 @@
+                                                final int offset,
+                                                final int length,
+                                                final boolean negative) {
+-        final BigInteger val = BigInteger.valueOf(value);
++        if (length < 9) {
++return ;
++}
++
++final BigInteger val = BigInteger.valueOf(value);
+         final byte[] b = val.toByteArray();
+         final int len = b.length;
+         if (len > length - 1) {
+

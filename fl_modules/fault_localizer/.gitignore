@@ -1,0 +1,10 @@
+# build
+target/
+versions/
+
+# log
+logs/
+
+# tmp files
+*~
+/bin/

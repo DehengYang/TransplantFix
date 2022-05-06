@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_26/defects4j_Chart_26/source/org/jfree/chart/plot/CategoryPlot.java	2022-05-03 16:22:38.023933212 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_26/mcrepair_sfl/patch/susp_0/donor_19/patch_1/CategoryPlot.java	2022-05-03 16:53:05.090877983 -0400
+@@ -2533,9 +2533,9 @@
+                      PlotRenderingInfo state) {
+ 
+         // if the plot area is too small, just return...
+-        boolean b1 = (area.getWidth() <= MINIMUM_WIDTH_TO_DRAW);
+-        boolean b2 = (area.getHeight() <= MINIMUM_HEIGHT_TO_DRAW);
+-        if (b1 || b2) {
++        if (!isRangeCrosshairVisible()) { 
++
++
+             return;
+         }
+ 
+

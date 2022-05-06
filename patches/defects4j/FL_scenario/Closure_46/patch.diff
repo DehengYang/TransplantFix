@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_46/defects4j_Closure_46/src/com/google/javascript/rhino/jstype/RecordType.java	2022-05-03 13:45:49.017527896 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_46/mcrepair_sfl/patch/susp_0/donor_7/patch_6/RecordType.java	2022-05-03 14:04:31.746030340 -0400
+@@ -142,7 +142,11 @@
+     if (!that.isRecordType()) {
+       return super.getLeastSupertype(that);
+     }
+-    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
++    if (that.isRecordType() && that.isRecordType()) {
++return super.getLeastSupertype(that);
++}
++
++RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+     for (String property : properties.keySet()) {
+       if (that.toMaybeRecordType().hasProperty(property) &&
+           that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(
+

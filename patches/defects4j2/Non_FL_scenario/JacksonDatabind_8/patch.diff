@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_8/defects4j2_JacksonDatabind_8/src/main/java/com/fasterxml/jackson/databind/deser/impl/CreatorCollector.java	2022-05-02 15:49:19.654371012 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_8/mcrepair_pfl/patch/susp_0/donor_39/patch_3/CreatorCollector.java	2022-05-02 16:16:10.584878386 -0400
+@@ -275,7 +275,8 @@
+ 
+     protected void verifyNonDup(AnnotatedWithParams newOne, int typeIndex, boolean explicit)
+     {
+-        final int mask = (1 << typeIndex);
++        int _explicitCreators = (typeIndex <= 32) ? (typeIndex + typeIndex) : (typeIndex + (typeIndex >> 2));
++final int mask = (1 << typeIndex);
+         _hasNonDefaultCreator = true;
+         AnnotatedWithParams oldOne = _creators[typeIndex];
+         // already had an explicitly marked one?
+

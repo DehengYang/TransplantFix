@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_5/defects4j2_JxPath_5/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java	2022-05-03 15:44:35.824134418 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_5/mcrepair_sfl/patch/susp_9/donor_41/patch_0/DOMNodePointer.java	2022-05-03 17:01:03.628166862 -0400
+@@ -575,7 +575,11 @@
+     }
+ 
+     public boolean equals(Object object) {
+-        return object == this || object instanceof DOMNodePointer && node == ((DOMNodePointer) object).node;
++        if (parent == null || parent.isContainer()) {
++return true;
++}
++
++return object == this || object instanceof DOMNodePointer && node == ((DOMNodePointer) object).node;
+     }
+ 
+     public static String getPrefix(Node node) {
+

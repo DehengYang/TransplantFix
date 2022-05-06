@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_74/defects4j_Math_74/src/main/java/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2022-05-03 17:32:38.693166449 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_74/mcrepair_sfl/patch/susp_0/donor_48/patch_0/AdamsMoultonIntegrator.java	2022-05-03 18:30:47.221005384 -0400
+@@ -205,7 +205,8 @@
+                             final double t, final double[] y)
+         throws DerivativeException, IntegratorException {
+ 
+-        final int n = y0.length;
++        setMaxGrowth(10.0);
++final int n = y0.length;
+         sanityChecks(equations, t0, y0, t, y);
+         setEquations(equations);
+         resetEvaluations();
+

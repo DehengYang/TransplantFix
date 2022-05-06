@@ -1,0 +1,29 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Closure_159/defects4j2_Closure_159/src/com/google/javascript/jscomp/InlineFunctions.java	2022-05-03 20:34:35.838245115 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Closure_159/mcrepair_pfl/patch/susp_0/donor_25/patch_0/InlineFunctions.java	2022-05-03 20:48:37.088819784 -0400
+@@ -772,7 +772,24 @@
+    */
+   private void findCalledFunctions(
+       Node node, Set<String> changed) {
+-    Preconditions.checkArgument(changed != null);
++    if (NodeUtil.isName(node)) {
++String name = node.getString();
++if (name != null && !name.isEmpty()) {
++return ;
++}
++else {
++return ;
++}
++
++}
++else {
++if (NodeUtil.isGetProp(node)) {
++return ;
++}
++
++}
++
++Preconditions.checkArgument(changed != null);
+     // For each referenced function, add a new reference
+     if (node.getType() == Token.CALL) {
+       Node child = node.getFirstChild();
+

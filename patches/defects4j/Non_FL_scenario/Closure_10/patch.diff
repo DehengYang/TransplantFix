@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_10/defects4j_Closure_10/src/com/google/javascript/jscomp/NodeUtil.java	2022-05-03 21:40:59.370840820 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_10/mcrepair_pfl/patch/susp_0/donor_45/patch_0/NodeUtil.java	2022-05-03 22:03:26.899040030 -0400
+@@ -1413,6 +1413,10 @@
+   }
+ 
+   static boolean mayBeString(Node n, boolean recurse) {
++if (mayBeStringHelper(n)) {
++return true;
++}
++
+     if (recurse) {
+       return allResultsMatch(n, MAY_BE_STRING_PREDICATE);
+     } else {

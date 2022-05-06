@@ -1,0 +1,17 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_2/defects4j_Math_2/src/main/java/org/apache/commons/math3/distribution/HypergeometricDistribution.java	2022-05-04 08:14:29.387918832 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_2/mcrepair_sfl/patch/susp_4/donor_44/patch_0/HypergeometricDistribution.java	2022-05-04 10:00:16.904005620 -0400
+@@ -318,7 +318,12 @@
+      * @return upper bound of the support
+      */
+     public int getSupportUpperBound() {
+-        return FastMath.min(getNumberOfSuccesses(), getSampleSize());
++        if (!numericalVarianceIsCalculated) {
++numericalVariance = getNumberOfSuccesses();
++numericalVarianceIsCalculated = true;
++}
++
++return FastMath.min(getNumberOfSuccesses(), getSampleSize());
+     }
+ 
+     /**
+

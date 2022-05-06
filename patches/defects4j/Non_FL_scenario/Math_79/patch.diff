@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_79/defects4j_Math_79/src/main/java/org/apache/commons/math/util/MathUtils.java	2022-05-04 02:18:38.087208434 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_79/mcrepair_pfl/patch/susp_0/donor_2/patch_3/MathUtils.java	2022-05-04 02:21:05.805810401 -0400
+@@ -1623,7 +1623,8 @@
+     public static double distance(int[] p1, int[] p2) {
+       int sum = 0;
+       for (int i = 0; i < p1.length; i++) {
+-          final int dp = p1[i] - p2[i];
++          final double dp = p1[i] - p2[i];
++
+           sum += dp * dp;
+       }
+       return Math.sqrt(sum);
+

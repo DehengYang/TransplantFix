@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_16/defects4j2_JacksonDatabind_16/src/main/java/com/fasterxml/jackson/databind/introspect/AnnotationMap.java	2022-05-03 11:55:37.116325803 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_16/mcrepair_pfl/patch/susp_0/donor_2/patch_8/AnnotationMap.java	2022-05-03 11:58:58.373250662 -0400
+@@ -108,7 +108,8 @@
+         if (_annotations == null) {
+             _annotations = new HashMap<Class<? extends Annotation>,Annotation>();
+         }
+-        Annotation previous = _annotations.put(ann.annotationType(), ann);
++        _annotations.put(ann.annotationType(), ann);
++Annotation previous = _annotations.put(ann.annotationType(), ann);
+         return (previous != null) && previous.equals(ann);
+     }
+ }
+

@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_32/defects4j2_Cli_32/src/main/java/org/apache/commons/cli/HelpFormatter.java	2022-05-04 04:42:18.613620246 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_32/mcrepair_sfl/patch/susp_0/donor_0/patch_0/HelpFormatter.java	2022-05-04 04:44:58.323374641 -0400
+@@ -934,11 +934,7 @@
+         
+         // if we didn't find one, simply chop at startPos+width
+         pos = startPos + width;
+-        while ((pos <= text.length()) && ((c = text.charAt(pos)) != ' ')
+-               && (c != '\n') && (c != '\r'))
+-        {
+-            ++pos;
+-        }        
++                
+         return pos == text.length() ? -1 : pos;
+     }
+ 
+

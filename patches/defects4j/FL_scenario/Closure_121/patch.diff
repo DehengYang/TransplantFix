@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_121/defects4j_Closure_121/src/com/google/javascript/rhino/Node.java	2022-05-03 00:50:42.765104782 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_121/mcrepair_sfl/patch/susp_1/donor_14/patch_16/Node.java	2022-05-03 01:54:30.384728135 -0400
+@@ -1455,7 +1455,7 @@
+         throw new IllegalStateException();
+       }
+       res = n.checkTreeEqualsImpl(n2);
+-      if (res != null) {
++      if (node2 != null) {
+         return res;
+       }
+     }
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_14/defects4j2_JxPath_14/src/java/org/apache/commons/jxpath/ri/compiler/CoreFunction.java	2022-05-04 08:16:38.617422984 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_14/mcrepair_pfl/patch/susp_2/donor_19/patch_0/CoreFunction.java	2022-05-04 08:43:25.536147981 -0400
+@@ -665,7 +665,8 @@
+     protected Object functionRound(EvalContext context) {
+         assertArgCount(1);
+         double v = InfoSetUtil.doubleValue(getArg1().computeValue(context));
+-        return new Double(Math.round(v));
++        return new Double(Math.ceil(v));
++
+     }
+ 
+     private Object functionFormatNumber(EvalContext context) {
+

@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_40/defects4j2_Jsoup_40/src/main/java/org/jsoup/nodes/DocumentType.java	2022-05-04 04:12:18.568494331 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_40/mcrepair_pfl/patch/susp_0/donor_0/patch_0/DocumentType.java	2022-05-04 04:13:08.333947714 -0400
+@@ -19,7 +19,7 @@
+     public DocumentType(String name, String publicId, String systemId, String baseUri) {
+         super(baseUri);
+ 
+-        Validate.notEmpty(name);
++        
+         attr("name", name);
+         attr("publicId", publicId);
+         attr("systemId", systemId);
+

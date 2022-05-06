@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_18/defects4j2_Cli_18/src/java/org/apache/commons/cli/PosixParser.java	2022-05-03 02:28:21.394991395 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_18/mcrepair_pfl/patch/susp_2/donor_15/patch_10/PosixParser.java	2022-05-03 02:54:10.386821686 -0400
+@@ -237,7 +237,8 @@
+         }
+         else if (stopAtNonOption)
+         {
+-            eatTheRest = true;
++            process(token);
++eatTheRest = true;
+         }
+     }
+ 
+

@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_54/defects4j2_JacksonDatabind_54/src/main/java/com/fasterxml/jackson/databind/ser/PropertyBuilder.java	2022-05-02 15:49:29.154786856 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_54/mcrepair_pfl/patch/susp_0/donor_8/patch_6/PropertyBuilder.java	2022-05-02 16:04:14.413533772 -0400
+@@ -131,7 +131,7 @@
+             // always suppress nulls
+             suppressNulls = true;
+             // and for referential types, also "empty", which in their case means "absent"
+-            if (declaredType.isReferenceType()) {
++            if (actualType.isContainerType() || actualType.isReferenceType()) {
+                 valueToSuppress = BeanPropertyWriter.MARKER_FOR_EMPTY;
+             }
+             break;
+

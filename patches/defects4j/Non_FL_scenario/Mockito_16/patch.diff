@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Mockito_16/defects4j_Mockito_16/src/org/mockito/internal/MockitoCore.java	2022-05-03 15:25:03.999583194 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Mockito_16/mcrepair_pfl/patch/susp_0/donor_0/patch_0/MockitoCore.java	2022-05-03 15:26:46.748512008 -0400
+@@ -29,7 +29,8 @@
+     private final MockUtil mockUtil = new MockUtil();
+     private final MockingProgress mockingProgress = new ThreadSafeMockingProgress();
+     
+-    public <T> T mock(Class<T> classToMock, MockSettings mockSettings, boolean shouldResetOngoingStubbing) { return mock(classToMock, mockSettings); }
++    public <T> T mock(Class<T> classToMock, MockSettings mockSettings, boolean shouldResetOngoingStubbing) { return mockUtil.createMock(classToMock, (MockSettingsImpl) mockSettings);
++ }
+     public <T> T mock(Class<T> classToMock, MockSettings mockSettings) {
+         mockingProgress.validateState();
+             mockingProgress.resetOngoingStubbing();
+

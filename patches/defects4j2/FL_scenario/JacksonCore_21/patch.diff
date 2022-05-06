@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_21/defects4j2_JacksonCore_21/src/main/java/com/fasterxml/jackson/core/filter/FilteringParserDelegate.java	2022-05-03 07:56:17.806901181 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_21/mcrepair_sfl/patch/susp_2/donor_0/patch_0/FilteringParserDelegate.java	2022-05-03 08:01:30.580652541 -0400
+@@ -237,7 +237,7 @@
+             //if not scalar and ended successfully, and !includePath, then return null
+                 if (_currToken.isStructEnd()) {
+                     if (_headContext.isStartHandled()) {
+-                        return (_currToken = null);
++                        
+                     }
+                 } else if (_currToken.isScalarValue()) {
+                     //else if scalar, and scalar not present in obj/array and !includePath and INCLUDE_ALL matched once
+

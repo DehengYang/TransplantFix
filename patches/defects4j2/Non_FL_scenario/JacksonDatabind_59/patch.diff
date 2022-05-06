@@ -1,0 +1,19 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_59/defects4j2_JacksonDatabind_59/src/main/java/com/fasterxml/jackson/databind/type/TypeFactory.java	2022-05-03 04:29:50.794744213 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_59/mcrepair_pfl/patch/susp_0/donor_0/patch_9/TypeFactory.java	2022-05-03 04:37:13.482448532 -0400
+@@ -369,14 +369,7 @@
+             // (2) A small set of "well-known" List/Map subtypes where can take a short-cut
+             if (baseType.isContainerType()) {
+                 if (baseType.isMapLikeType()) {
+-                    if ((subclass == HashMap.class)
+-                            || (subclass == LinkedHashMap.class)
+-                            || (subclass == EnumMap.class)
+-                            || (subclass == TreeMap.class)) {
+-                        newType = _fromClass(null, subclass,
+-                                TypeBindings.create(subclass, baseType.getKeyType(), baseType.getContentType()));
+-                        break;
+-                    }
++                    
+                 } else if (baseType.isCollectionLikeType()) {
+                     if ((subclass == ArrayList.class)
+                             || (subclass == LinkedList.class)
+

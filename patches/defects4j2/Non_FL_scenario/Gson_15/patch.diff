@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Gson_15/defects4j2_Gson_15/gson/src/main/java/com/google/gson/stream/JsonWriter.java	2022-05-02 16:01:10.222476231 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Gson_15/mcrepair_pfl/patch/susp_0/donor_0/patch_2/JsonWriter.java	2022-05-02 16:01:45.247614630 -0400
+@@ -492,7 +492,7 @@
+    */
+   public JsonWriter value(double value) throws IOException {
+     writeDeferredName();
+-    if (Double.isNaN(value) || Double.isInfinite(value)) {
++    if (!isLenient() && (Double.isNaN(value) || Double.isInfinite(value))) {
+       throw new IllegalArgumentException("Numeric values must be finite, but was " + value);
+     }
+     beforeValue();
+

@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_26/defects4j_Chart_26/source/org/jfree/chart/axis/Axis.java	2022-05-03 15:21:50.262936443 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_26/mcrepair_pfl/patch/susp_0/donor_23/patch_121/Axis.java	2022-05-03 15:57:28.832410087 -0400
+@@ -1110,6 +1110,8 @@
+         Rectangle2D labelBounds = TextUtilities.getTextBounds(label, g2, fm);
+         Shape hotspot = null;
+         
++if (state == null)  
++
+         if (edge == RectangleEdge.TOP) {
+             AffineTransform t = AffineTransform.getRotateInstance(
+                     getLabelAngle(), labelBounds.getCenterX(), 
+

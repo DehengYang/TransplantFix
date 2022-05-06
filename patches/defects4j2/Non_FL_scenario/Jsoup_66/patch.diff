@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_66/defects4j2_Jsoup_66/src/main/java/org/jsoup/nodes/Element.java	2022-05-02 15:58:12.059673207 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_66/mcrepair_pfl/patch/susp_0/donor_24/patch_0/Element.java	2022-05-02 16:04:53.539190737 -0400
+@@ -85,6 +85,7 @@
+     }
+ 
+     protected List<Node> ensureChildNodes() {
++shadowChildrenRef = null;
+         if (childNodes == EMPTY_NODES) {
+             childNodes = new NodeList(4);
+         }
+

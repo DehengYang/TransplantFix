@@ -1,0 +1,29 @@
+bin_java: build/classes
+bin_test: build/test
+classpath: []
+classpath_compile: []
+classpath_compile_relative:
+- /build/classes
+- /lib/ant-launcher.jar
+- /lib/ant.jar
+- /lib/args4j.jar
+- /lib/guava.jar
+- /lib/json.jar
+- /lib/jsr305.jar
+- /lib/junit.jar
+- /lib/libtrunk_rhino_parser_jarjared.jar
+- /lib/protobuf-java.jar
+classpath_relative:
+- /build/classes
+- /lib/ant-launcher.jar
+- /lib/ant.jar
+- /lib/args4j.jar
+- /lib/guava.jar
+- /lib/json.jar
+- /lib/jsr305.jar
+- /lib/junit.jar
+- /lib/libtrunk_rhino_parser_jarjared.jar
+- /lib/protobuf-java.jar
+- /build/test
+src_java: src
+src_test: test

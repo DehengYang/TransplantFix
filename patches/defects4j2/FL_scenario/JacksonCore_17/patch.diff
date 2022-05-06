@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_17/defects4j2_JacksonCore_17/src/main/java/com/fasterxml/jackson/core/base/GeneratorBase.java	2022-05-03 01:29:12.774432563 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_17/mcrepair_sfl/patch/susp_0/donor_28/patch_0/GeneratorBase.java	2022-05-03 01:36:48.036644956 -0400
+@@ -295,7 +295,8 @@
+     }
+ 
+     @Override public void writeRawValue(String text, int offset, int len) throws IOException {
+-        _verifyValueWrite("write raw value");
++        offset = 0;
++_verifyValueWrite("write raw value");
+         writeRaw(text, offset, len);
+     }
+ 
+

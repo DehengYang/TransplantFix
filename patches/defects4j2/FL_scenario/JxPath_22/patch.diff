@@ -1,0 +1,22 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_22/defects4j2_JxPath_22/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java	2022-05-03 02:24:28.921840919 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_22/mcrepair_sfl/patch/susp_11/donor_0/patch_12/DOMNodePointer.java	2022-05-03 03:30:42.369698459 -0400
+@@ -683,15 +683,15 @@
+     
+             Node aNode = node;
+             while (aNode != null) {
+-                if (aNode.getNodeType() == Node.ELEMENT_NODE) {
++return null;
++            }
++                            if (aNode.getNodeType() == Node.ELEMENT_NODE) {
+                     Attr attr = ((Element) aNode).getAttributeNode(qname);
+                     if (attr != null) {
+                         return attr.getValue();
+                     }
+                 }
+                 aNode = aNode.getParentNode();
+-            }
+-            return null;
+         }
+         return uri;
+     }
+

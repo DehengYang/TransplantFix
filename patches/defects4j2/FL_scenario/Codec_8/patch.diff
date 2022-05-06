@@ -1,0 +1,20 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_8/defects4j2_Codec_8/src/java/org/apache/commons/codec/binary/Base64.java	2022-05-04 16:14:37.081411252 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_8/mcrepair_sfl/patch/susp_1/donor_36/patch_5/Base64.java	2022-05-04 16:30:33.087251322 -0400
+@@ -381,6 +381,16 @@
+     /** Doubles our buffer. */
+     private void resizeBuffer() {
+         if (buffer == null) {
++            byte[] buffer = new byte[readPos >> 1];
++
++            int DEFAULT_BUFFER_SIZE = 0, pos = 0;
++            DEFAULT_BUFFER_SIZE++;
++
++        } else {
++            byte[] b = new byte[buffer.length * DEFAULT_BUFFER_RESIZE_FACTOR];
++            System.arraycopy(buffer, 0, b, 0, buffer.length);
++            buffer = b;
++        }if (buffer == null) {
+             buffer = new byte[DEFAULT_BUFFER_SIZE];
+             pos = 0;
+             readPos = 0;
+

@@ -1,0 +1,26 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_98/defects4j_Math_98/src/java/org/apache/commons/math/linear/BigMatrixImpl.java	2022-05-03 19:42:32.117337829 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_98/mcrepair_pfl/patch/susp_1/donor_6/patch_9/BigMatrixImpl.java	2022-05-03 19:59:20.414387255 -0400
+@@ -988,7 +988,8 @@
+         }
+         final int nRows = this.getRowDimension();
+         final int nCols = this.getColumnDimension();
+-        final BigDecimal[] out = new BigDecimal[v.length];
++        final BigDecimal[] out = new BigDecimal[nRows];
++
+         for (int row = 0; row < nRows; row++) {
+             BigDecimal sum = ZERO;
+             for (int i = 0; i < nCols; i++) {
+
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_98/defects4j_Math_98/src/java/org/apache/commons/math/linear/RealMatrixImpl.java	2022-05-03 19:42:32.117337829 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_98/mcrepair_pfl/patch/susp_1/donor_6/patch_9/RealMatrixImpl.java	2022-05-03 19:59:20.418387433 -0400
+@@ -776,7 +776,8 @@
+         if (v.length != nCols) {
+             throw new IllegalArgumentException("vector has wrong length");
+         }
+-        final double[] out = new double[v.length];
++        final double[] out = new double[nRows];
++
+         for (int row = 0; row < nRows; row++) {
+             final double[] dataRow = data[row];
+             double sum = 0;
+

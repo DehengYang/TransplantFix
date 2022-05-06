@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_1/defects4j2_Jsoup_1/src/main/java/org/jsoup/nodes/Document.java	2022-05-03 04:09:32.493819766 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_1/mcrepair_pfl/patch/susp_0/donor_37/patch_0/Document.java	2022-05-03 04:18:28.397135664 -0400
+@@ -111,7 +111,11 @@
+ 
+     // does not recurse.
+     private void normalise(Element element) {
+-        List<Node> toMove = new ArrayList<Node>();
++        if (parent() == null) {
++return ;
++}
++
++List<Node> toMove = new ArrayList<Node>();
+         for (Node node: element.childNodes) {
+             if (node instanceof TextNode) {
+                 TextNode tn = (TextNode) node;
+

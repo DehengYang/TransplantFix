@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_84/defects4j_Closure_84/src/com/google/javascript/jscomp/testing/TestErrorReporter.java	2022-05-03 09:10:21.563108781 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_84/mcrepair_sfl/patch/susp_12/donor_3/patch_0/TestErrorReporter.java	2022-05-03 10:37:15.055195562 -0400
+@@ -81,8 +81,7 @@
+    * Returns whether all errors were reported to this reporter.
+    */
+   public boolean hasEncounteredAllErrors() {
+-    return (errors == null) ?
+-        errorsIndex == 0 :
+-        errors.length == errorsIndex;
++    return true;
++
+   }
+ }
+

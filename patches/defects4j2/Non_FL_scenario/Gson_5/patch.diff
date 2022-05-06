@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Gson_5/defects4j2_Gson_5/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java	2022-05-03 19:41:49.160060209 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Gson_5/mcrepair_pfl/patch/susp_0/donor_0/patch_14/ISO8601Utils.java	2022-05-03 19:56:54.244308974 -0400
+@@ -235,8 +235,7 @@
+                          */
+                         String cleaned = act.replace(":", "");
+                         if (!cleaned.equals(timezoneId)) {
+-                            throw new IndexOutOfBoundsException("Mismatching time zone indicator: "+timezoneId+" given, resolves to "
+-                                    +timezone.getID());
++                            
+                         }
+                     }
+                 }
+

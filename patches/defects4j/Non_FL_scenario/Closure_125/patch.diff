@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_125/defects4j_Closure_125/src/com/google/javascript/jscomp/TypeCheck.java	2022-05-03 09:58:53.241473029 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_125/mcrepair_pfl/patch/susp_0/donor_4/patch_2/TypeCheck.java	2022-05-03 10:05:03.731220944 -0400
+@@ -1660,7 +1660,7 @@
+       FunctionType fnType = type.toMaybeFunctionType();
+       if (fnType != null) {
+         visitParameterList(t, n, fnType);
+-        ensureTyped(t, n, fnType.getInstanceType());
++        
+       } else {
+         ensureTyped(t, n);
+       }
+

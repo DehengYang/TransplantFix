@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_44/defects4j_Math_44/src/main/java/org/apache/commons/math/ode/events/EventState.java	2022-05-02 19:02:49.327133895 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_44/mcrepair_sfl/patch/susp_6/donor_0/patch_4/EventState.java	2022-05-02 21:02:28.587157826 -0400
+@@ -187,7 +187,10 @@
+     public boolean evaluateStep(final StepInterpolator interpolator)
+         throws ConvergenceException {
+ 
+-            forward = interpolator.isForward();
++            t0 = interpolator.getPreviousTime();
++interpolator.setInterpolatedTime(t0);
++g0 = handler.g(t0, interpolator.getInterpolatedState());
++forward = interpolator.isForward();
+             final double t1 = interpolator.getCurrentTime();
+             final double dt = t1 - t0;
+             if (FastMath.abs(dt) < convergence) {
+

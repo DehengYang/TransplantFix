@@ -1,0 +1,19 @@
+bin_java: build/classes
+bin_test: build/test
+classpath: []
+classpath_compile: []
+classpath_compile_relative:
+- /build/classes
+- /lib/google_common_deploy.jar
+- /lib/junit.jar
+- /lib/libtrunk_rhino_parser_jarjared.jar
+- /lib/protobuf_deploy.jar
+classpath_relative:
+- /build/classes
+- /lib/google_common_deploy.jar
+- /lib/junit.jar
+- /lib/libtrunk_rhino_parser_jarjared.jar
+- /lib/protobuf_deploy.jar
+- /build/test
+src_java: src
+src_test: test

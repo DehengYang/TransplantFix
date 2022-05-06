@@ -1,0 +1,25 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_109/defects4j_Closure_109/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java	2022-05-03 21:19:16.324149347 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_109/mcrepair_sfl/patch/susp_0/donor_1/patch_7/JsDocInfoParser.java	2022-05-03 21:30:12.723647358 -0400
+@@ -1946,7 +1946,20 @@
+    */
+   private Node parseTypeName(JsDocToken token) {
+     if (token != JsDocToken.STRING) {
+-      return reportGenericTypeSyntaxWarning();
++      token = next();
++if (token == JsDocToken.COMMA ||
++          token == JsDocToken.EQUALS ||
++          token == JsDocToken.RB ||
++          token == JsDocToken.RC ||
++          token == JsDocToken.RP ||
++          token == JsDocToken.PIPE ||
++          token == JsDocToken.GT ||
++          token == JsDocToken.EOC) {
++restoreLookAhead(token);
++return newNode(Token.QMARK);
++}
++
++return reportGenericTypeSyntaxWarning();
+     }
+ 
+     String typeName = stream.getString();
+

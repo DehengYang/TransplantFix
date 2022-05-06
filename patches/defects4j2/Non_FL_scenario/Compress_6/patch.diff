@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_6/defects4j2_Compress_6/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java	2022-05-03 20:29:44.238263507 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_6/mcrepair_pfl/patch/susp_0/donor_1/patch_0/ZipArchiveEntry.java	2022-05-03 20:30:12.675431967 -0400
+@@ -60,7 +60,8 @@
+      * @param name the name of the entry
+      */
+     public ZipArchiveEntry(String name) {
+-        super(name);
++        super(name);this.name = name;
++
+     }
+ 
+     /**
+

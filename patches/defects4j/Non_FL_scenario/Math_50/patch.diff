@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_50/defects4j_Math_50/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2022-05-03 09:52:09.131004239 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_50/mcrepair_pfl/patch/susp_0/donor_1/patch_55/BaseSecantSolver.java	2022-05-03 10:06:27.693355959 -0400
+@@ -185,7 +185,7 @@
+                 case REGULA_FALSI:
+                     // Nothing.
+                     if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
++                        
+                         f0 = computeObjectiveValue(x0);
+                     }
+                     break;
+

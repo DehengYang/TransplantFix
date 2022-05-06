@@ -1,0 +1,26 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_108/defects4j2_JacksonDatabind_108/src/main/java/com/fasterxml/jackson/databind/ObjectReader.java	2022-05-03 12:58:38.701844082 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_108/mcrepair_pfl/patch/susp_0/donor_3/patch_0/ObjectReader.java	2022-05-03 13:13:03.753020680 -0400
+@@ -1166,7 +1166,21 @@
+     @SuppressWarnings("unchecked")
+     @Override
+     public <T extends TreeNode> T readTree(JsonParser p) throws IOException {
+-        return (T) _bindAsTree(p);
++        _config.initialize(p);
++if (_schema != null) {
++p.setSchema(_schema);
++}
++JsonToken t = p.getCurrentToken();
++if (t == null) {
++t = p.nextToken();
++if (t == null) {
++return null;
++}
++
++}
++
++
++return (T) _bindAsTree(p);
+     }
+ 
+     @Override
+

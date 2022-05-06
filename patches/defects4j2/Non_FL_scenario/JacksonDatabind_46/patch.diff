@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_46/defects4j2_JacksonDatabind_46/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java	2022-05-04 02:52:19.741858018 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_46/mcrepair_pfl/patch/susp_0/donor_3/patch_10/ReferenceType.java	2022-05-04 02:57:54.652753296 -0400
+@@ -153,7 +153,8 @@
+         _classSignature(_class, sb, false);
+         sb.append('<');
+         sb = _referencedType.getGenericSignature(sb);
+-        sb.append(';');
++        sb.append('>');
++sb.append(';');
+         return sb;
+     }
+     
+

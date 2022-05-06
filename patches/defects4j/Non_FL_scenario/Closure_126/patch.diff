@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_126/defects4j_Closure_126/src/com/google/javascript/jscomp/MinimizeExitPoints.java	2022-05-03 12:12:45.214259822 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_126/mcrepair_pfl/patch/susp_0/donor_0/patch_35/MinimizeExitPoints.java	2022-05-03 12:21:55.544643064 -0400
+@@ -140,7 +140,7 @@
+        */
+       if (NodeUtil.hasFinally(n)) {
+         Node finallyBlock = n.getLastChild();
+-        tryMinimizeExits(finallyBlock, exitType, labelName);
++        
+       }
+     }
+ 
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_65/defects4j_Math_65/src/main/java/org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer.java	2022-05-02 20:02:42.419236575 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_65/mcrepair_pfl/patch/susp_1/donor_20/patch_1/AbstractLeastSquaresOptimizer.java	2022-05-02 20:18:57.538691881 -0400
+@@ -255,7 +255,8 @@
+         double chiSquare = 0;
+         for (int i = 0; i < rows; ++i) {
+             final double residual = residuals[i];
+-            chiSquare += residual * residual / residualsWeights[i];
++            chiSquare += residual * residual * residualsWeights[i];
++
+         }
+         return chiSquare;
+     }
+

@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_57/defects4j_Closure_57/src/com/google/javascript/jscomp/ClosureCodingConvention.java	2022-05-02 16:12:40.345550380 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_57/mcrepair_sfl/patch/susp_1/donor_15/patch_11/ClosureCodingConvention.java	2022-05-02 16:37:07.919718453 -0400
+@@ -195,7 +195,9 @@
+         if (functionName.equals(qualifiedName)) {
+           Node target = callee.getNext();
+           if (target != null) {
+-            className = target.getString();
++            if (target.getType() == Token.STRING)  
++
++className = target.getString();
+           }
+         }
+       }
+

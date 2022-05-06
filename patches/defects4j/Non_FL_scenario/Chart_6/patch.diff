@@ -1,0 +1,23 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_6/defects4j_Chart_6/source/org/jfree/chart/util/ShapeList.java	2022-05-03 14:24:49.682973546 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_6/mcrepair_pfl/patch/susp_0/donor_0/patch_13/ShapeList.java	2022-05-03 14:28:18.746183592 -0400
+@@ -108,7 +108,18 @@
+         if (!(obj instanceof ShapeList)) {
+             return false;
+         }
+-        return super.equals(obj);
++        ShapeList that = (ShapeList) obj;
++int listSize = size();
++int i = 0;while (i < listSize) {
++if (!ShapeUtilities.equal(getShape(i), that.getShape(i))) {
++return false;
++}
++else {
++i++;}
++
++}
++return true;
++
+ 
+     }
+ 
+

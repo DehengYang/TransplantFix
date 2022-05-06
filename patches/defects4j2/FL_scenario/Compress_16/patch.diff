@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_16/defects4j2_Compress_16/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java	2022-05-04 18:29:04.437296492 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_16/mcrepair_sfl/patch/susp_0/donor_44/patch_11/TarArchiveEntry.java	2022-05-04 19:45:29.308737602 -0400
+@@ -1003,7 +1003,8 @@
+                 name = name + "/";
+             }
+             if (prefix.length() > 0){
+-                name = prefix + "/" + name;
++                version = version.substring(0, offset);
++name = prefix + "/" + name;
+             }
+         }
+         }
+

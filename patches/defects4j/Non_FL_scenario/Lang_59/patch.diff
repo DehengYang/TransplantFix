@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_59/defects4j_Lang_59/src/java/org/apache/commons/lang/text/StrBuilder.java	2022-05-03 14:17:20.182717603 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_59/mcrepair_pfl/patch/susp_0/donor_13/patch_5/StrBuilder.java	2022-05-03 14:27:54.719519893 -0400
+@@ -880,6 +880,7 @@
+             ensureCapacity(size + width);
+             String str = (obj == null ? getNullText() : obj.toString());
+             int strLen = str.length();
++ensureCapacity(strLen + 1);
+             if (strLen >= width) {
+                 str.getChars(0, strLen, buffer, size);
+             } else {
+

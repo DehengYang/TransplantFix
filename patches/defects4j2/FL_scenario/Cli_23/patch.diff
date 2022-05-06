@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_23/defects4j2_Cli_23/src/java/org/apache/commons/cli/HelpFormatter.java	2022-05-03 10:44:04.870890332 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_23/mcrepair_sfl/patch/susp_0/donor_19/patch_0/HelpFormatter.java	2022-05-03 10:56:02.584752940 -0400
+@@ -331,7 +331,8 @@
+      */
+     public void printHelp(String cmdLineSyntax, Options options)
+     {
+-        printHelp(defaultWidth, cmdLineSyntax, null, options, null, false);
++        defaultWidth = defaultWidth + defaultWidth;
++printHelp(defaultWidth, cmdLineSyntax, null, options, null, false);
+     }
+ 
+     /**
+

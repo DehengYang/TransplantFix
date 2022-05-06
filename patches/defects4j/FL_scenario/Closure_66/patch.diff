@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_66/defects4j_Closure_66/src/com/google/javascript/jscomp/TypeCheck.java	2022-05-03 13:12:57.875347489 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_66/mcrepair_sfl/patch/susp_2/donor_0/patch_0/TypeCheck.java	2022-05-03 13:45:53.201693991 -0400
+@@ -819,7 +819,7 @@
+   private void doPercentTypedAccounting(NodeTraversal t, Node n) {
+     JSType type = n.getJSType();
+     if (type == null) {
+-      nullCount++;
++      
+     } else if (type.isUnknownType()) {
+       if (reportUnknownTypes.isOn()) {
+         compiler.report(
+

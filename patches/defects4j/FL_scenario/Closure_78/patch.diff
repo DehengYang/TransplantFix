@@ -1,0 +1,20 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_78/defects4j_Closure_78/src/com/google/javascript/jscomp/AbstractPeepholeOptimization.java	2022-05-02 19:37:24.116894348 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_78/mcrepair_sfl/patch/susp_1/donor_11/patch_0/AbstractPeepholeOptimization.java	2022-05-02 20:48:01.301673008 -0400
+@@ -50,7 +50,15 @@
+    * @param n The node for which the error should be reported
+    */
+   protected void error(DiagnosticType diagnostic, Node n) {
+-    JSError error = currentTraversal.makeError(n, diagnostic, n.toString());
++    if (n.getType() == Token.NUMBER) {
++double numValue = n.getDouble();
++if (numValue == 0 || numValue == 1) {
++return ;
++}
++
++}
++
++JSError error = currentTraversal.makeError(n, diagnostic, n.toString());
+     currentTraversal.getCompiler().report(error);
+   }
+ 
+

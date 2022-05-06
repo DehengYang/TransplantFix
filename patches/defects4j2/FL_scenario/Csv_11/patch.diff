@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Csv_11/defects4j2_Csv_11/src/main/java/org/apache/commons/csv/CSVFormat.java	2022-05-03 08:47:09.797791496 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Csv_11/mcrepair_sfl/patch/susp_0/donor_21/patch_0/CSVFormat.java	2022-05-03 08:51:40.145817129 -0400
+@@ -825,9 +825,8 @@
+      * @return A new CSVFormat that is equal to this but with the specified empty header behavior.
+      */
+     public CSVFormat withIgnoreEmptyHeaders(final boolean ignoreEmptyHeaders) {
+-        return new CSVFormat(delimiter, quoteChar, quotePolicy, commentStart, escape,
+-                ignoreSurroundingSpaces, ignoreEmptyHeaders, recordSeparator, nullString, header, skipHeaderRecord,
+-                ignoreEmptyHeaders);
++        return new CSVFormat(delimiter, null, null, null, null, false, false, null, null, null, false, false);
++
+     }
+ 
+     /**
+

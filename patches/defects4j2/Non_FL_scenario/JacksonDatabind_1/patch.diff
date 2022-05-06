@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_1/defects4j2_JacksonDatabind_1/src/main/java/com/fasterxml/jackson/databind/ser/BeanPropertyWriter.java	2022-05-03 20:44:58.500362791 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_1/mcrepair_pfl/patch/susp_0/donor_3/patch_2/BeanPropertyWriter.java	2022-05-03 20:47:16.394484823 -0400
+@@ -585,7 +585,7 @@
+         Object value = get(bean);
+         if (value == null) { // nulls need specialized handling
+             if (_nullSerializer != null) {
+-                _nullSerializer.serialize(null, jgen, prov);
++                
+             } else { // can NOT suppress entries in tabular output
+                 jgen.writeNull();
+             }
+

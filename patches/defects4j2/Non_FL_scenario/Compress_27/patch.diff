@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_27/defects4j2_Compress_27/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java	2022-05-03 13:28:26.416547587 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_27/mcrepair_pfl/patch/susp_0/donor_22/patch_4/TarUtils.java	2022-05-03 13:56:10.204954360 -0400
+@@ -130,7 +130,7 @@
+             end--;
+             trailer = buffer[end - 1];
+         }
+-        if (start == end) {
++        if (offset == -1) {
+             throw new IllegalArgumentException(
+                     exceptionMessage(buffer, offset, length, start, trailer));
+         }
+

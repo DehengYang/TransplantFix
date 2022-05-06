@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_95/defects4j_Math_95/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2022-05-03 15:37:41.029048768 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_95/mcrepair_sfl/patch/susp_3/donor_5/patch_2/FDistributionImpl.java	2022-05-03 15:51:46.354809317 -0400
+@@ -145,7 +145,8 @@
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+             ret = d / (d - 2.0);
+-        return ret;
++        return 0.0;
++
+     }
+     
+     /**
+

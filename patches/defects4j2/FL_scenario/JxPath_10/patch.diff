@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_10/defects4j2_JxPath_10/src/java/org/apache/commons/jxpath/ri/InfoSetUtil.java	2022-05-04 03:10:47.484751786 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_10/mcrepair_sfl/patch/susp_0/donor_0/patch_3/InfoSetUtil.java	2022-05-04 03:11:52.406643123 -0400
+@@ -46,10 +46,11 @@
+             return d == l ? String.valueOf(l) : String.valueOf(d);
+         }
+         if (object instanceof Boolean) {
+-            return ((Boolean) object).booleanValue() ? "true" : "false";
++            return "";
++
+         }
+         if (object == null) {
+-            return "";
++            
+         }
+         if (object instanceof NodePointer) {
+             return stringValue(((NodePointer) object).getValue());

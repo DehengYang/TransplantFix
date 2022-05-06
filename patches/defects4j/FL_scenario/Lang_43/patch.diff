@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_43/defects4j_Lang_43/src/java/org/apache/commons/lang/text/ExtendedMessageFormat.java	2022-05-04 04:16:51.752996058 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_43/mcrepair_sfl/patch/susp_0/donor_8/patch_27/ExtendedMessageFormat.java	2022-05-04 04:49:15.472642858 -0400
+@@ -155,7 +155,8 @@
+         while (pos.getIndex() < pattern.length()) {
+             switch (c[pos.getIndex()]) {
+             case QUOTE:
+-                appendQuotedString(pattern, pos, stripCustom, true);
++                appendQuotedString(pattern, pos, stripCustom, false);
++
+                 break;
+             case START_FE:
+                 fmtCount++;
+

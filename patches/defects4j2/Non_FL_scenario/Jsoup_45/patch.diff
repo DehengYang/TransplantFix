@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_45/defects4j2_Jsoup_45/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java	2022-05-02 20:23:11.057628590 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_45/mcrepair_pfl/patch/susp_0/donor_23/patch_49/HtmlTreeBuilder.java	2022-05-02 20:27:31.877152580 -0400
+@@ -391,7 +391,7 @@
+             if ("select".equals(name)) {
+                 transition(HtmlTreeBuilderState.InSelect);
+                 break; // frag
+-            } else if (("td".equals(name) || "td".equals(name) && !last)) {
++            } else if (!last) {
+                 transition(HtmlTreeBuilderState.InCell);
+                 break;
+             } else if ("tr".equals(name)) {
+

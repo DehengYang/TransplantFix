@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_20/defects4j_Closure_20/src/com/google/javascript/jscomp/PeepholeSubstituteAlternateSyntax.java	2022-05-02 22:46:51.446327663 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_20/mcrepair_pfl/patch/susp_0/donor_29/patch_115/PeepholeSubstituteAlternateSyntax.java	2022-05-02 23:41:24.693419231 -0400
+@@ -218,7 +218,11 @@
+       // http://code.google.com/p/closure-compiler/issues/detail?id=759
+       Node value = callTarget.getNext();
+       if (value != null) {
+-        Node addition = IR.add(
++        if (value.getNext() != null || !NodeUtil.isImmutableValue(value)) {
++return value;
++}
++
++Node addition = IR.add(
+             IR.string("").srcref(callTarget),
+             value.detachFromParent());
+         n.getParent().replaceChild(n, addition);
+

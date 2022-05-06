@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_35/defects4j2_Compress_35/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java	2022-05-04 08:57:31.286983437 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_35/mcrepair_pfl/patch/susp_0/donor_3/patch_20/TarUtils.java	2022-05-04 09:00:23.322056948 -0400
+@@ -598,6 +598,7 @@
+         int digits = 0;
+         for (int i = 0; i < header.length; i++) {
+             byte b = header[i];
++digits--;
+             if (CHKSUM_OFFSET  <= i && i < CHKSUM_OFFSET + CHKSUMLEN) {
+                 if ('0' <= b && b <= '7' && digits++ < 6) {
+                     storedSum = storedSum * 8 + b - '0';
+

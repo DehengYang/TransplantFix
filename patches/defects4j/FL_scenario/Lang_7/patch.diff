@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_7/defects4j_Lang_7/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2022-05-04 07:47:50.668537756 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_7/mcrepair_sfl/patch/susp_0/donor_4/patch_25/NumberUtils.java	2022-05-04 07:50:18.041034852 -0400
+@@ -450,7 +450,7 @@
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+         if (str.startsWith("--")) {
+-            return null;
++            
+         }
+         if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+             int hexDigits = str.length() - 2; // drop 0x
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_55/defects4j_Lang_55/src/java/org/apache/commons/lang/time/StopWatch.java	2022-05-03 07:27:23.528200893 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_55/mcrepair_sfl/patch/susp_2/donor_7/patch_4/StopWatch.java	2022-05-03 07:45:37.724088079 -0400
+@@ -115,8 +115,8 @@
+         if(this.runningState != STATE_RUNNING && this.runningState != STATE_SUSPENDED) {
+             throw new IllegalStateException("Stopwatch is not running. ");
+         }
+-            stopTime = System.currentTimeMillis();
+-        this.runningState = STATE_STOPPED;
++            return ;
++
+     }
+ 
+     /**

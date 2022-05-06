@@ -1,0 +1,17 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_39/defects4j_Lang_39/src/java/org/apache/commons/lang3/StringUtils.java	2022-05-03 17:24:45.471365530 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_39/mcrepair_pfl/patch/susp_0/donor_0/patch_0/StringUtils.java	2022-05-03 17:26:28.430739840 -0400
+@@ -3672,12 +3672,7 @@
+         int increase = 0;
+ 
+         // count the replacement text elements that are larger than their corresponding text being replaced
+-        for (int i = 0; i < searchList.length; i++) {
+-            int greater = replacementList[i].length() - searchList[i].length();
+-            if (greater > 0) {
+-                increase += 3 * greater; // assume 3 matches
+-            }
+-        }
++        
+         // have upper-bound at 20% increase, then let Java take over
+         increase = Math.min(increase, text.length() / 5);
+ 
+

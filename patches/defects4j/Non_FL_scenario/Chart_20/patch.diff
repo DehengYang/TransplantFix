@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_20/defects4j_Chart_20/source/org/jfree/chart/plot/ValueMarker.java	2022-05-03 02:13:16.102555930 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_20/mcrepair_pfl/patch/susp_0/donor_1/patch_0/ValueMarker.java	2022-05-03 02:17:55.885613179 -0400
+@@ -92,7 +92,8 @@
+      */
+     public ValueMarker(double value, Paint paint, Stroke stroke, 
+                        Paint outlinePaint, Stroke outlineStroke, float alpha) {
+-        super(paint, stroke, paint, stroke, alpha);
++        super(paint, stroke, outlinePaint, outlineStroke, alpha);
++
+         this.value = value;
+     }
+     
+

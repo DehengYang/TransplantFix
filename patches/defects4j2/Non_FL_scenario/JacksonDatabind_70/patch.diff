@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_70/defects4j2_JacksonDatabind_70/src/main/java/com/fasterxml/jackson/databind/deser/impl/BeanPropertyMap.java	2022-05-04 08:45:48.909165659 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_70/mcrepair_pfl/patch/susp_0/donor_0/patch_21/BeanPropertyMap.java	2022-05-04 08:55:49.743825130 -0400
+@@ -447,7 +447,7 @@
+             props.add(prop);
+         }
+         if (!found) {
+-            throw new NoSuchElementException("No entry '"+propToRm.getName()+"' found, can't remove");
++            
+         }
+         init(props);
+     }
+

@@ -1,0 +1,21 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_13/defects4j_Math_13/src/main/java/org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.java	2022-05-03 17:20:21.510713026 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_13/mcrepair_pfl/patch/susp_0/donor_0/patch_0/AbstractLeastSquaresOptimizer.java	2022-05-03 17:44:36.202390118 -0400
+@@ -559,7 +559,16 @@
+      * @return the square-root of the weight matrix.
+      */
+     private RealMatrix squareRoot(RealMatrix m) {
+-            final EigenDecomposition dec = new EigenDecomposition(m);
++            if (m instanceof DiagonalMatrix) {
++final int dim = m.getRowDimension();
++final RealMatrix sqrtM=new DiagonalMatrix(dim);
++int i = 0;while (i < dim) {
++sqrtM.setEntry(i,i,FastMath.sqrt(m.getEntry(i,i)));
++i++;}
++return sqrtM;
++}
++
++final EigenDecomposition dec = new EigenDecomposition(m);
+             return dec.getSquareRoot();
+     }
+ }
+

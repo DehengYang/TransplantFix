@@ -1,0 +1,33 @@
+bin_java: target/classes
+bin_test: target/test-classes
+classpath:
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/lib/junit-4.11.jar
+classpath_compile: []
+classpath_compile_relative:
+- /target/classes
+- /src/java
+- /target/lib/commons-beanutils-1.7.0.jar
+- /target/lib/commons-logging-1.1.jar
+- /target/lib/jdom-1.0.jar
+- /target/lib/jsp-api-2.0.jar
+- /target/lib/junit-3.8.2.jar
+- /target/lib/mockrunner-0.4.1.jar
+- /target/lib/servletapi-2.4.jar
+- /target/lib/xerces-2.4.0.jar
+- /target/lib/xml-apis-2.0.2.jar
+classpath_relative:
+- /src/java
+- /target/lib/commons-beanutils-1.7.0.jar
+- /target/lib/commons-logging-1.1.jar
+- /target/lib/jdom-1.0.jar
+- /target/lib/jsp-api-2.0.jar
+- /target/lib/junit-3.8.2.jar
+- /target/lib/mockrunner-0.4.1.jar
+- /target/lib/servletapi-2.4.jar
+- /target/lib/xerces-2.4.0.jar
+- /target/lib/xml-apis-2.0.2.jar
+- /src/test
+- /target/classes
+- /target/test-classes
+src_java: src/java
+src_test: src/test

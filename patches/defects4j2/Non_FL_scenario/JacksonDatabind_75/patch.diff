@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_75/defects4j2_JacksonDatabind_75/src/main/java/com/fasterxml/jackson/databind/ser/std/EnumSerializer.java	2022-05-04 21:26:54.266158416 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_75/mcrepair_pfl/patch/susp_1/donor_1/patch_3/EnumSerializer.java	2022-05-04 21:41:22.792672506 -0400
+@@ -96,6 +96,7 @@
+     public JsonSerializer<?> createContextual(SerializerProvider serializers,
+             BeanProperty property) throws JsonMappingException
+     {
++Boolean _serializeAsIndex = null;
+         if (property != null) {
+             JsonFormat.Value format = findFormatOverrides(serializers,
+                     property, handledType());
+

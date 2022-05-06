@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_13/defects4j2_JxPath_13/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java	2022-05-04 07:56:04.761430137 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_13/mcrepair_pfl/patch/susp_0/donor_1/patch_14/DOMNodePointer.java	2022-05-04 07:57:08.963302967 -0400
+@@ -412,7 +412,8 @@
+         Element element = (Element) node;
+         String prefix = name.getPrefix();
+         if (prefix != null) {
+-            String ns = getNamespaceURI(prefix);
++            String ns = getNamespaceResolver().getNamespaceURI(prefix);
++
+             if (ns == null) {
+                 throw new JXPathException(
+                     "Unknown namespace prefix: " + prefix);
+

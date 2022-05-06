@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_10/defects4j_Lang_10/src/main/java/org/apache/commons/lang3/time/FastDateParser.java	2022-05-02 20:14:58.174375816 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_10/mcrepair_pfl/patch/susp_0/donor_7/patch_7/FastDateParser.java	2022-05-02 20:20:01.116014832 -0400
+@@ -307,7 +307,8 @@
+             if(Character.isWhitespace(c)) {
+                 if(!wasWhite) {
+                     wasWhite= true;
+-                    regex.append("\\s*+");
++                    regex.append(c);
++
+                 }
+                 continue;
+             }
+

@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_22/defects4j_Closure_22/src/com/google/javascript/jscomp/CheckSideEffects.java	2022-05-03 02:58:11.237464559 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_22/mcrepair_pfl/patch/susp_0/donor_3/patch_9/CheckSideEffects.java	2022-05-03 03:08:27.646086931 -0400
+@@ -113,10 +113,7 @@
+           int ancestorType = an.getType();
+           if (ancestorType == Token.COMMA)
+             continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK)
+-            return;
+-          else
+-            break;
++          
+         }
+       }
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+

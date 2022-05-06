@@ -1,0 +1,29 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_89/defects4j_Math_89/src/java/org/apache/commons/math/stat/Frequency.java	2022-05-03 03:33:03.975208592 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_89/mcrepair_sfl/patch/susp_0/donor_0/patch_0/Frequency.java	2022-05-03 03:34:16.534449159 -0400
+@@ -107,7 +107,24 @@
+      */
+     @Deprecated
+     public void addValue(Object v) {
+-            addValue((Comparable<?>) v);            
++            Object obj=v;
++if (v instanceof Integer) {
++obj=Long.valueOf(((Integer)v).longValue());
++}
++try {
++  Long count=(Long)freqTable.get(obj);
++  if (count == null) {
++    freqTable.put(obj,Long.valueOf(1));
++  }
++ else {
++    freqTable.put(obj,Long.valueOf(count.longValue() + 1));
++  }
++}
++ catch (ClassCastException ex) {
++  throw new IllegalArgumentException("Value not comparable to existing values.");
++}
++
++            
+     }
+     
+     /**
+

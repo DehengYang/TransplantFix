@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_49/defects4j2_JacksonDatabind_49/src/main/java/com/fasterxml/jackson/databind/ser/impl/WritableObjectId.java	2022-05-04 09:50:38.005728572 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_49/mcrepair_pfl/patch/susp_0/donor_8/patch_4/WritableObjectId.java	2022-05-04 09:54:33.708191214 -0400
+@@ -47,7 +47,9 @@
+         // 04-Jun-2016, tatu: As per [databind#1255], need to consider possibility of
+         //    id being generated for "alwaysAsId", but not being written as POJO; regardless,
+         //    need to use existing id if there is one:
+-            id = generator.generateId(forPojo);
++            if (id == null)  
++
++id = generator.generateId(forPojo);
+         return id;
+     }
+ 
+

@@ -1,0 +1,20 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_25/defects4j2_JacksonCore_25/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java	2022-05-03 17:35:54.200333008 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_25/mcrepair_sfl/patch/susp_3/donor_2/patch_16/ReaderBasedJsonParser.java	2022-05-03 19:11:04.754510166 -0400
+@@ -1782,7 +1782,15 @@
+         }
+         int ptr = _inputPtr;
+         int hash = _hashSeed;
+-        final int inputLen = _inputEnd;
++        i = 1;
++if (_inputPtr >= _inputEnd) {
++if (!_loadMore()) {
++_reportInvalidEOF(" in field name", JsonToken.FIELD_NAME);
++}
++
++}
++
++final int inputLen = _inputEnd;
+ 
+         if (ptr < inputLen) {
+             do {
+

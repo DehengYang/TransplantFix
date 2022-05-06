@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_8/defects4j2_JxPath_8/src/java/org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java	2022-05-03 22:48:15.564406881 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_8/mcrepair_sfl/patch/susp_8/donor_14/patch_0/CoreOperationRelationalExpression.java	2022-05-04 00:09:28.643301977 -0400
+@@ -39,7 +39,11 @@
+     }
+ 
+     public final Object computeValue(EvalContext context) {
+-        return compute(args[0].computeValue(context), args[1]
++        if (!InfoSetUtil.booleanValue(args[0].computeValue(context))) {
++return Boolean.FALSE;
++}
++
++return compute(args[0].computeValue(context), args[1]
+                 .computeValue(context)) ? Boolean.TRUE : Boolean.FALSE;
+     }
+ 
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_5/defects4j_Chart_5/source/org/jfree/data/xy/XYSeries.java	2022-05-03 14:12:11.606845510 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_5/mcrepair_sfl/patch/susp_0/donor_19/patch_2/XYSeries.java	2022-05-03 14:19:43.697014466 -0400
+@@ -543,7 +543,8 @@
+         }
+ 
+         // if we get to here, we know that duplicate X values are not permitted
+-        XYDataItem overwritten = null;
++        this.autoSort = false;
++XYDataItem overwritten = null;
+         int index = indexOf(x);
+         if (index >= 0 && !this.allowDuplicateXValues) {
+             XYDataItem existing = (XYDataItem) this.data.get(index);
+

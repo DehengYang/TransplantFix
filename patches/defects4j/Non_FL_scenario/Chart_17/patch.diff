@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_17/defects4j_Chart_17/source/org/jfree/data/time/TimeSeries.java	2022-05-02 23:00:51.921862104 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_17/mcrepair_pfl/patch/susp_0/donor_0/patch_0/TimeSeries.java	2022-05-02 23:05:52.167176321 -0400
+@@ -854,7 +854,9 @@
+      *         subclasses may differ.
+      */
+     public Object clone() throws CloneNotSupportedException {
+-        Object clone = createCopy(0, getItemCount() - 1);
++        TimeSeries clone = (TimeSeries) super.clone();
++clone.data = (List) ObjectUtilities.deepClone(this.data);
++
+         return clone;
+     }
+ 
+

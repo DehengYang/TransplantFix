@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_44/defects4j2_Jsoup_44/src/main/java/org/jsoup/nodes/Node.java	2022-05-02 19:05:08.838598827 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_44/mcrepair_sfl/patch/susp_6/donor_41/patch_0/Node.java	2022-05-02 20:21:33.026800646 -0400
+@@ -300,7 +300,8 @@
+      * @see #after(Node)
+      */
+     public Node before(Node node) {
+-        Validate.notNull(node);
++        int siblingIndex = childNodeSize();
++Validate.notNull(node);
+         Validate.notNull(parentNode);
+ 
+         parentNode.addChildren(siblingIndex, node);
+

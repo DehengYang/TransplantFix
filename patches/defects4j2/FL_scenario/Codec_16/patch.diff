@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_16/defects4j2_Codec_16/src/main/java/org/apache/commons/codec/binary/Base32.java	2022-05-03 05:08:40.605219309 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_16/mcrepair_sfl/patch/susp_0/donor_0/patch_0/Base32.java	2022-05-03 05:09:38.503029098 -0400
+@@ -306,7 +306,7 @@
+         this.decodeSize = this.encodeSize - 1;
+ 
+         if (isInAlphabet(pad) || isWhiteSpace(pad)) {
+-            throw new IllegalArgumentException("pad must not be in alphabet or whitespace");
++            
+         }
+     }
+ 
+

@@ -1,0 +1,24 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_85/defects4j_Math_85/src/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	2022-05-02 17:44:37.266175564 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_85/mcrepair_pfl/patch/susp_0/donor_16/patch_50/UnivariateRealSolverUtils.java	2022-05-02 18:23:02.208812914 -0400
+@@ -196,12 +196,14 @@
+                 ((a > lowerBound) || (b < upperBound)));
+    
+         if (fa * fb >= 0.0 ) {
+-            throw new ConvergenceException(
+-                      "number of iterations={0}, maximum iterations={1}, " +
+-                      "initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " +
+-                      "final b value={6}, f(a)={7}, f(b)={8}",
+-                      numIterations, maximumIterations, initial,
+-                      lowerBound, upperBound, a, b, fa, fb);
++            if (b * fa > 0.0) {
++fb = initial;
++}
++else {
++fb = initial;
++}
++
++
+         }
+         
+         return new double[]{a, b};
+

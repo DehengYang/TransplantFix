@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_11/defects4j2_Cli_11/src/java/org/apache/commons/cli/HelpFormatter.java	2022-05-04 21:49:05.881822321 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_11/mcrepair_sfl/patch/susp_5/donor_5/patch_29/HelpFormatter.java	2022-05-04 22:51:16.456264451 -0400
+@@ -631,7 +631,9 @@
+         // if the Option has a value
+         if (option.hasArg() && (option.getArgName() != null))
+         {
+-            buff.append(" <").append(option.getArgName()).append(">");
++            if (option.hasArgName())  
++
++buff.append(" <").append(option.getArgName()).append(">");
+         }
+ 
+         // if the Option is not a required option
+

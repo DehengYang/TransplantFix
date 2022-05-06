@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_28/defects4j2_Compress_28/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java	2022-05-03 17:24:34.254038807 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_28/mcrepair_sfl/patch/susp_0/donor_36/patch_8/TarArchiveInputStream.java	2022-05-03 17:39:08.313899888 -0400
+@@ -224,7 +224,8 @@
+      */
+     public TarArchiveEntry getNextTarEntry() throws IOException {
+         if (hasHitEOF) {
+-            return null;
++            throw new IOException("The stream is closed");
++
+         }
+ 
+         if (currEntry != null) {
+

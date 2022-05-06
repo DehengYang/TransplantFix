@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_8/defects4j2_JacksonCore_8/src/main/java/com/fasterxml/jackson/core/util/TextBuffer.java	2022-05-04 00:14:45.263015419 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_8/mcrepair_sfl/patch/susp_0/donor_14/patch_0/TextBuffer.java	2022-05-04 00:30:54.125242465 -0400
+@@ -298,6 +298,11 @@
+     public char[] getTextBuffer()
+     {
+         // Are we just using shared input buffer?
++if (_segments == null) {
++_segments = new ArrayList<char[]>();
++}
++_hasSegments = true;
++
+         if (_inputStart >= 0) return _inputBuffer;
+         if (_resultArray != null)  return _resultArray;
+         if (_resultString != null) {
+

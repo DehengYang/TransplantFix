@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_133/defects4j_Closure_133/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java	2022-05-04 02:51:57.270339722 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_133/mcrepair_pfl/patch/susp_0/donor_12/patch_0/JsDocInfoParser.java	2022-05-04 03:01:10.700886656 -0400
+@@ -2397,7 +2397,8 @@
+    * Returns the remainder of the line.
+    */
+   private String getRemainingJSDocLine() {
+-    String result = stream.getRemainingJSDocLine();
++    unreadToken = NO_UNREAD_TOKEN;
++String result = stream.getRemainingJSDocLine();
+     return result;
+   }
+ 

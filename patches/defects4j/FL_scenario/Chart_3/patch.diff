@@ -1,0 +1,24 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_3/defects4j_Chart_3/source/org/jfree/data/time/TimeSeries.java	2022-05-03 11:16:04.461883661 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_3/mcrepair_sfl/patch/susp_1/donor_18/patch_0/TimeSeries.java	2022-05-03 11:31:40.493647751 -0400
+@@ -561,7 +561,19 @@
+      *              permitted).
+      */
+     public void add(TimeSeriesDataItem item) {
+-        add(item, true);
++        Number yN = item.getValue();
++if (yN != null) {
++double y = yN.doubleValue();
++if (!Double.isNaN(y)) {
++if (y <= this.minY || y >= this.maxY) {
++findBoundsByIteration();
++}
++
++}
++
++}
++
++add(item, true);
+     }
+ 
+     /**
+

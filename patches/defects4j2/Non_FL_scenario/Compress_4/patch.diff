@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_4/defects4j2_Compress_4/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStream.java	2022-05-03 14:28:30.248696323 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Compress_4/mcrepair_pfl/patch/susp_2/donor_13/patch_13/ZipArchiveOutputStream.java	2022-05-03 15:10:27.368095337 -0400
+@@ -527,7 +527,8 @@
+      * @exception  IOException  if an I/O error occurs.
+      */
+     public void close() throws IOException {
+-        finish();
++        def.finish();
++
+         if (raf != null) {
+             raf.close();
+         }
+

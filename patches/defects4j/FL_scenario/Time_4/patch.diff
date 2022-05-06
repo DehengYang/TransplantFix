@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Time_4/defects4j_Time_4/src/main/java/org/joda/time/field/ZeroIsMaxDateTimeField.java	2022-05-02 23:32:37.981268020 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Time_4/mcrepair_sfl/patch/susp_0/donor_26/patch_0/ZeroIsMaxDateTimeField.java	2022-05-02 23:33:56.173936491 -0400
+@@ -108,7 +108,8 @@
+      * @return the minimum value of 1
+      */
+     public int getMinimumValue() {
+-        return 1;
++        return getWrappedField().getMaximumValue() + 1;
++
+     }
+ 
+     /**
+

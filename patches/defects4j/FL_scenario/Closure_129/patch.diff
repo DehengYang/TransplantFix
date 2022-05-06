@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_129/defects4j_Closure_129/src/com/google/javascript/rhino/Node.java	2022-05-03 18:47:58.016387656 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_129/mcrepair_sfl/patch/susp_0/donor_2/patch_0/Node.java	2022-05-03 18:54:32.963336896 -0400
+@@ -1543,7 +1543,7 @@
+       }
+     } else if (type == Token.CALL) {
+       if (this.getBooleanProp(FREE_CALL) != node.getBooleanProp(FREE_CALL)) {
+-        return false;
++        
+       }
+     }
+ 
+

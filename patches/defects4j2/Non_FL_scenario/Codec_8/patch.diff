@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_8/defects4j2_Codec_8/src/java/org/apache/commons/codec/binary/Base64InputStream.java	2022-05-04 15:44:23.948824362 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Codec_8/mcrepair_pfl/patch/susp_0/donor_0/patch_8/Base64InputStream.java	2022-05-04 15:48:33.412609814 -0400
+@@ -167,7 +167,7 @@
+                     byte[] buf = new byte[doEncode ? 4096 : 8192];
+                     int c = in.read(buf);
+                     if (c > 0 && b.length == len) {
+-                        base64.setInitialBuffer(b, offset, len);
++                        
+                     }
+                     if (doEncode) {
+                         base64.encode(buf, 0, c);
+

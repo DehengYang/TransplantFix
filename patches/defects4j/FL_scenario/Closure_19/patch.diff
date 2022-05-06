@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_19/defects4j_Closure_19/src/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java	2022-05-02 21:13:26.198500453 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_19/mcrepair_sfl/patch/susp_1/donor_0/patch_0/ChainableReverseAbstractInterpreter.java	2022-05-02 22:20:40.703395748 -0400
+@@ -172,8 +172,7 @@
+         // "this" references aren't currently modeled in the CFG.
+ 
+       default:
+-        throw new IllegalArgumentException("Node cannot be refined. \n" +
+-            node.toStringTree());
++        
+     }
+   }
+ 
+

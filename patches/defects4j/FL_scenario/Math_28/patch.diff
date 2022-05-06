@@ -1,0 +1,49 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_28/defects4j_Math_28/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2022-05-03 06:37:39.102338615 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_28/mcrepair_sfl/patch/susp_5/donor_4/patch_0/SimplexSolver.java	2022-05-03 08:31:01.413438887 -0400
+@@ -112,44 +112,7 @@
+ 
+         if (minRatioPositions.size() == 0) {
+             return null;
+-        } else if (minRatioPositions.size() > 1) {
+-            // there's a degeneracy as indicated by a tie in the minimum ratio test
+-
+-            // 1. check if there's an artificial variable that can be forced out of the basis
+-                for (Integer row : minRatioPositions) {
+-                    for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {
+-                        int column = i + tableau.getArtificialVariableOffset();
+-                        final double entry = tableau.getEntry(row, column);
+-                        if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+-                            return row;
+-                        }
+-                    }
+-                }
+-
+-            // 2. apply Bland's rule to prevent cycling:
+-            //    take the row for which the corresponding basic variable has the smallest index
+-            //
+-            // see http://www.stanford.edu/class/msande310/blandrule.pdf
+-            // see http://en.wikipedia.org/wiki/Bland%27s_rule (not equivalent to the above paper)
+-            //
+-            // Additional heuristic: if we did not get a solution after half of maxIterations
+-            //                       revert to the simple case of just returning the top-most row
+-            // This heuristic is based on empirical data gathered while investigating MATH-828.
+-                Integer minRow = null;
+-                int minIndex = tableau.getWidth();
+-                for (Integer row : minRatioPositions) {
+-                    int i = tableau.getNumObjectiveFunctions();
+-                    for (; i < tableau.getWidth() - 1 && minRow != row; i++) {
+-                        if (row == tableau.getBasicRow(i)) {
+-                            if (i < minIndex) {
+-                                minIndex = i;
+-                                minRow = row;
+-                            }
+-                        }
+-                    }
+-                }
+-                return minRow;
+-        }
++        } else 
+         return minRatioPositions.get(0);
+     }
+ 
+

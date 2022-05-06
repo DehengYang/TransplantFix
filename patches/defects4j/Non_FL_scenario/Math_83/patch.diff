@@ -1,0 +1,18 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_83/defects4j_Math_83/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2022-05-02 16:08:42.210313257 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_83/mcrepair_pfl/patch/susp_0/donor_35/patch_6/SimplexTableau.java	2022-05-02 16:25:51.052023926 -0400
+@@ -290,7 +290,13 @@
+     private Integer getBasicRow(final int col, boolean ignoreObjectiveRows) {
+         Integer row = null;
+         int start = getNumObjectiveFunctions();
+-        for (int i = start; i < getHeight(); i++) {
++        for (int i = 0; i < start; i++) {
++            if (MathUtils.equals(getEntry(i, col), 1.0, epsilon) && (row == null)) {
++                
++            } else if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
++                return null;
++            }
++        }for (int i = start; i < getHeight(); i++) {
+             if (MathUtils.equals(getEntry(i, col), 1.0, epsilon) && (row == null)) {
+                 row = i;
+             } else if (!MathUtils.equals(getEntry(i, col), 0.0, epsilon)) {
+

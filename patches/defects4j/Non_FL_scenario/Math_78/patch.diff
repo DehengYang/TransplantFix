@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_78/defects4j_Math_78/src/main/java/org/apache/commons/math/ode/events/EventState.java	2022-05-03 23:44:42.114485243 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_78/mcrepair_pfl/patch/susp_0/donor_47/patch_38/EventState.java	2022-05-04 00:11:29.778314480 -0400
+@@ -169,7 +169,8 @@
+ 
+         try {
+ 
+-            forward = interpolator.isForward();
++            double maxCheckInterval = 1.0;
++forward = interpolator.isForward();
+             final double t1 = interpolator.getCurrentTime();
+             final int    n  = Math.max(1, (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval));
+             final double h  = (t1 - t0) / n;
+

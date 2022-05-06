@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Mockito_22/defects4j_Mockito_22/src/org/mockito/internal/matchers/Equality.java	2022-05-03 18:39:59.857439969 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Mockito_22/mcrepair_pfl/patch/susp_0/donor_40/patch_0/Equality.java	2022-05-03 18:45:08.648261508 -0400
+@@ -10,6 +10,10 @@
+ public class Equality {
+ 
+     public static boolean areEqual(Object o1, Object o2) {
++if (o1 == o2) {
++return true;
++}
++
+         if (o1 == null || o2 == null) {
+             return o1 == null && o2 == null;
+         } else if (isArray(o1)) {
+

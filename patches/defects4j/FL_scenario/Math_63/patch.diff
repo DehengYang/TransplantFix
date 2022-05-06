@@ -1,0 +1,19 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_63/defects4j_Math_63/src/main/java/org/apache/commons/math/util/MathUtils.java	2022-05-02 16:51:30.896487208 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_63/mcrepair_sfl/patch/susp_0/donor_18/patch_0/MathUtils.java	2022-05-02 16:57:37.000760573 -0400
+@@ -414,7 +414,14 @@
+      * @return {@code true} if the values are equal.
+      */
+     public static boolean equals(double x, double y) {
+-        return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
++        if (x > 0.5) {
++x = FastMath.ceil(x);
++}
++else {
++x = FastMath.floor(x);
++}
++
++return (Double.isNaN(x) && Double.isNaN(y)) || x == y;
+     }
+ 
+     /**
+

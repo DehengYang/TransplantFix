@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_68/defects4j2_Jsoup_68/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java	2022-05-02 21:26:28.951672388 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_68/mcrepair_sfl/patch/susp_0/donor_0/patch_0/HtmlTreeBuilder.java	2022-05-02 21:27:17.337079384 -0400
+@@ -467,7 +467,7 @@
+         // https://html.spec.whatwg.org/multipage/parsing.html#has-an-element-in-the-specific-scope
+         int bottom = stack.size() -1;
+         if (bottom > MaxScopeSearchDepth) {
+-            bottom = MaxScopeSearchDepth;
++            
+         }
+         final int top = bottom > MaxScopeSearchDepth ? bottom - MaxScopeSearchDepth : 0;
+         // don't walk too far up the tree
+

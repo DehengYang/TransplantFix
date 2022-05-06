@@ -1,0 +1,19 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Closure_161/defects4j2_Closure_161/src/com/google/javascript/jscomp/PeepholeFoldConstants.java	2022-05-04 01:24:29.565717228 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Closure_161/mcrepair_pfl/patch/susp_0/donor_4/patch_3/PeepholeFoldConstants.java	2022-05-04 02:18:28.058864699 -0400
+@@ -1276,12 +1276,10 @@
+   }
+ 
+   private Node tryFoldArrayAccess(Node n, Node left, Node right) {
+-    Node parent = n.getParent();
+-    // If GETPROP/GETELEM is used as assignment target the array literal is
+-    // acting as a temporary we can't fold it here:
+-    //    "[][0] += 1"
++    if (!left.hasChildren() ||
++        left.getFirstChild().getNext() != left.getLastChild()) { 
++
+ 
+-    if (right.getType() != Token.NUMBER) {
+       // Sometimes people like to use complex expressions to index into
+       // arrays, or strings to index into array methods.
+       return n;
+

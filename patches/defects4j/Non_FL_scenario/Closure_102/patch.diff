@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_102/defects4j_Closure_102/src/com/google/javascript/jscomp/Normalize.java	2022-05-03 04:20:25.232343372 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_102/mcrepair_pfl/patch/susp_0/donor_45/patch_4/Normalize.java	2022-05-03 04:32:51.816130612 -0400
+@@ -87,7 +87,8 @@
+   public void process(Node externs, Node root) {
+     NodeTraversal.traverse(compiler, root, this);
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+-      MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
++      removeDuplicateDeclarations(root);
++MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+       t.traverseRoots(externs, root);
+     }
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_64/defects4j2_JacksonDatabind_64/src/main/java/com/fasterxml/jackson/databind/ser/PropertyBuilder.java	2022-05-03 16:28:43.258371402 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_64/mcrepair_pfl/patch/susp_0/donor_4/patch_4/PropertyBuilder.java	2022-05-03 16:40:29.541634307 -0400
+@@ -135,7 +135,8 @@
+ 
+         // property annotation override
+         
+-        inclV = inclV.withOverrides(propDef.findInclusion());
++        suppressNulls = _defaultInclusion.getValueInclusion() == JsonInclude.Include.NON_DEFAULT;
++inclV = inclV.withOverrides(propDef.findInclusion());
+         JsonInclude.Include inclusion = inclV.getValueInclusion();
+ 
+         if (inclusion == JsonInclude.Include.USE_DEFAULTS) { // should not occur but...
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Csv_4/defects4j2_Csv_4/src/main/java/org/apache/commons/csv/CSVParser.java	2022-05-02 20:59:56.253782470 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Csv_4/mcrepair_pfl/patch/susp_0/donor_1/patch_0/CSVParser.java	2022-05-02 21:00:27.087152175 -0400
+@@ -285,7 +285,8 @@
+      * @return a copy of the header map that iterates in column order.
+      */
+     public Map<String, Integer> getHeaderMap() {
+-        return new LinkedHashMap<String, Integer>(this.headerMap);
++        return headerMap;
++
+     }
+ 
+     /**
+

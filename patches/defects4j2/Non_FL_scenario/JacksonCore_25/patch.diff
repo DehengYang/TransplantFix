@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_25/defects4j2_JacksonCore_25/src/main/java/com/fasterxml/jackson/core/json/ReaderBasedJsonParser.java	2022-05-03 16:35:32.727338989 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_25/mcrepair_pfl/patch/susp_0/donor_5/patch_34/ReaderBasedJsonParser.java	2022-05-03 17:16:32.936101988 -0400
+@@ -1961,6 +1961,7 @@
+             char c = _inputBuffer[_inputPtr];
+             int i = (int) c;
+             if (i <= maxCode) {
++i = (i >> ((3 - hash) << 3)) & 0xFF;
+                 if (codes[i] != 0) {
+                     break;
+                 }
+

@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Mockito_38/defects4j_Mockito_38/src/org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool.java	2022-05-03 21:02:39.296294018 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Mockito_38/mcrepair_sfl/patch/susp_0/donor_34/patch_0/ArgumentMatchingTool.java	2022-05-03 21:05:10.575555118 -0400
+@@ -45,6 +45,10 @@
+     }
+ 
+     private boolean toStringEquals(Matcher m, Object arg) {
+-        return StringDescription.toString(m).equals(arg.toString());
++        if (!(arg instanceof Comparable)) {
++return false;
++}
++
++return StringDescription.toString(m).equals(arg.toString());
+     }
+ }
+

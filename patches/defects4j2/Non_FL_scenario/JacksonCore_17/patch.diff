@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_17/defects4j2_JacksonCore_17/src/main/java/com/fasterxml/jackson/core/json/UTF8JsonGenerator.java	2022-05-03 00:37:12.857042016 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonCore_17/mcrepair_pfl/patch/susp_0/donor_8/patch_3/UTF8JsonGenerator.java	2022-05-03 00:41:57.609922043 -0400
+@@ -530,7 +530,7 @@
+         // size that is guaranteed to fit in output buffer; each char can expand to
+         // at most 3 bytes, so at most 1/3 of buffer size.
+ 
+-        while (len > 0) {
++        while (offset == 0) {
+             int len2 = Math.min(buf.length, len);
+             text.getChars(offset, offset+len2, buf, 0);
+             writeRaw(buf, 0, len2);
+

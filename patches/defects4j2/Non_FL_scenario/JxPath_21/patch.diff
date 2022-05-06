@@ -1,0 +1,14 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_21/defects4j2_JxPath_21/src/java/org/apache/commons/jxpath/ri/model/beans/PropertyPointer.java	2022-05-03 00:07:31.569495226 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_21/mcrepair_pfl/patch/susp_0/donor_14/patch_0/PropertyPointer.java	2022-05-03 00:09:11.960621569 -0400
+@@ -149,7 +149,9 @@
+      * @return int length
+      */
+     public int getLength() {
+-        return ValueUtils.getLength(getBaseValue());
++        Object value = getBaseValue();
++return value == null ? 1 : ValueUtils.getLength(value);
++
+     }
+ 
+     /**
+

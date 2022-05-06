@@ -1,0 +1,11 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_73/defects4j_Math_73/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2022-05-03 14:43:12.691054199 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_73/mcrepair_pfl/patch/susp_0/donor_3/patch_63/BrentSolver.java	2022-05-03 14:51:44.145900266 -0400
+@@ -123,6 +123,7 @@
+ 
+         // return the second endpoint if it is good enough
+         double yMax = f.value(max);
++verifyBracketing(min, max, f);
+         if (Math.abs(yMax) <= functionValueAccuracy) {
+             setResult(yMax, 0);
+             return result;
+

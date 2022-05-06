@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_22/defects4j2_Cli_22/src/java/org/apache/commons/cli/PosixParser.java	2022-05-03 08:53:39.564186462 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_22/mcrepair_sfl/patch/susp_2/donor_0/patch_2/PosixParser.java	2022-05-03 09:37:13.590365915 -0400
+@@ -184,7 +184,7 @@
+     private void processNonOptionToken(String value)
+     {
+             eatTheRest = true;
+-            tokens.add("--");
++            
+ 
+         tokens.add(value);
+     }
+

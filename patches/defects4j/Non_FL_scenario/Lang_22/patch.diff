@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_22/defects4j_Lang_22/src/main/java/org/apache/commons/lang3/math/Fraction.java	2022-05-03 23:55:06.211703582 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_22/mcrepair_pfl/patch/susp_0/donor_3/patch_18/Fraction.java	2022-05-04 00:08:06.035422578 -0400
+@@ -581,6 +581,8 @@
+     private static int greatestCommonDivisor(int u, int v) {
+         // From Commons Math:
+         //if either operand is abs 1, return 1:
++if (u==0)  
++
+         if (Math.abs(u) <= 1 || Math.abs(v) <= 1) {
+             return 1;
+         }
+

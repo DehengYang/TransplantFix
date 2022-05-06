@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_12/defects4j_Math_12/src/main/java/org/apache/commons/math3/distribution/AbstractRealDistribution.java	2022-05-03 16:23:55.315707923 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_12/mcrepair_sfl/patch/susp_1/donor_41/patch_0/AbstractRealDistribution.java	2022-05-03 17:16:46.675670774 -0400
+@@ -243,8 +243,8 @@
+ 
+     /** {@inheritDoc} */
+     public void reseedRandomGenerator(long seed) {
+-        random.setSeed(seed);
+-        randomData.reSeed(seed);
++        final double n = random.nextGaussian();
++
+     }
+ 
+     /**

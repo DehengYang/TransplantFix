@@ -1,0 +1,21 @@
+# for memory analysis (heap dump)
+memory_analyzer
+
+# 
+transplantfix/null/
+libs/
+
+# soot
+sootOutput/
+
+# target
+target/
+logs/
+
+# package
+versions/
+
+# ide
+.classpath
+.settings/
+.project

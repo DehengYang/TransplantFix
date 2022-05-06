@@ -1,0 +1,25 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_27/defects4j_Closure_27/src/com/google/javascript/rhino/Node.java	2022-05-03 15:58:21.529102462 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_27/mcrepair_sfl/patch/susp_6/donor_2/patch_1/Node.java	2022-05-03 17:27:14.872631013 -0400
+@@ -2290,7 +2290,8 @@
+   }
+ 
+   public boolean isLabelName() {
+-    return this.getType() == Token.LABEL_NAME;
++    return true;
++
+   }
+ 
+   public boolean isName() {
+
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_27/defects4j_Closure_27/src/com/google/javascript/rhino/IR.java	2022-05-03 15:58:24.009200992 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_27/mcrepair_sfl/patch/susp_6/donor_2/patch_1/IR.java	2022-05-03 17:27:14.880631331 -0400
+@@ -94,7 +94,7 @@
+   }
+ 
+   public static Node block(Node stmt) {
+-    Preconditions.checkState(mayBeStatement(stmt));
++    
+     Node block = new Node(Token.BLOCK, stmt);
+     return block;
+   }
+

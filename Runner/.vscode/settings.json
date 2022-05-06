@@ -1,0 +1,6 @@
+{
+    "python.envFile": "${workspaceFolder}/dev.env",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+}
+

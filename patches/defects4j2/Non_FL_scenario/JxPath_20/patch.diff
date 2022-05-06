@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_20/defects4j2_JxPath_20/src/java/org/apache/commons/jxpath/ri/compiler/CoreOperationRelationalExpression.java	2022-05-02 23:48:28.493934273 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JxPath_20/mcrepair_pfl/patch/susp_0/donor_0/patch_0/CoreOperationRelationalExpression.java	2022-05-02 23:49:43.588267844 -0400
+@@ -85,7 +85,7 @@
+             return containsMatch((Iterator) left, right);
+         }
+         if (right instanceof Iterator) {
+-            return containsMatch((Iterator) right, left);
++            
+         }
+         double ld = InfoSetUtil.doubleValue(left);
+         if (Double.isNaN(ld)) {
+

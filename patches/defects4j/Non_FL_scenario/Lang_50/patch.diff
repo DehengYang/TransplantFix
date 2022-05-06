@@ -1,0 +1,21 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_50/defects4j_Lang_50/src/java/org/apache/commons/lang/time/FastDateFormat.java	2022-05-02 20:21:43.253291602 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Lang_50/mcrepair_pfl/patch/susp_1/donor_2/patch_1/FastDateFormat.java	2022-05-02 20:32:03.133579904 -0400
+@@ -296,7 +296,7 @@
+                 SimpleDateFormat formatter = (SimpleDateFormat) DateFormat.getDateInstance(style, locale);
+                 String pattern = formatter.toPattern();
+                 format = getInstance(pattern, timeZone, locale);
+-                cDateInstanceCache.put(key, format);
++                
+                 
+             } catch (ClassCastException ex) {
+                 throw new IllegalArgumentException("No date pattern for locale: " + locale);
+@@ -476,7 +476,7 @@
+                         locale);
+                 String pattern = formatter.toPattern();
+                 format = getInstance(pattern, timeZone, locale);
+-                cDateTimeInstanceCache.put(key, format);
++                
+ 
+             } catch (ClassCastException ex) {
+                 throw new IllegalArgumentException("No date time pattern for locale: " + locale);
+

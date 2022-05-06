@@ -1,0 +1,29 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_35/defects4j_Math_35/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java	2022-05-03 22:20:17.060327229 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_35/mcrepair_pfl/patch/susp_1/donor_4/patch_1/ElitisticListPopulation.java	2022-05-03 22:50:36.639926952 -0400
+@@ -47,7 +47,11 @@
+     public ElitisticListPopulation(final List<Chromosome> chromosomes,
+                                    final int populationLimit,
+                                    final double elitismRate) {
+-        super(chromosomes, populationLimit);
++        super(chromosomes, populationLimit);if (elitismRate < 0 || elitismRate > 1) {
++throw new OutOfRangeException(LocalizedFormats.ELITISM_RATE, elitismRate, 0, 1);
++}
++
++
+         this.elitismRate = elitismRate;
+     }
+ 
+@@ -61,7 +65,11 @@
+      * @throws OutOfRangeException if the elitism rate is outside the [0, 1] range
+      */
+     public ElitisticListPopulation(final int populationLimit, final double elitismRate) {
+-        super(populationLimit);
++        super(populationLimit);if (elitismRate < 0 || elitismRate > 1) {
++throw new OutOfRangeException(LocalizedFormats.ELITISM_RATE, elitismRate, 0, 1);
++}
++
++
+         this.elitismRate = elitismRate;
+     }
+ 
+

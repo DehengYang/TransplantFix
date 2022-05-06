@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_13/defects4j_Chart_13/source/org/jfree/chart/block/BorderArrangement.java	2022-05-04 05:24:25.607641744 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_13/mcrepair_pfl/patch/susp_0/donor_0/patch_0/BorderArrangement.java	2022-05-04 05:27:58.579633280 -0400
+@@ -447,7 +447,7 @@
+                     LengthConstraintType.RANGE, h[2], null,
+                     LengthConstraintType.FIXED);
+             Size2D size = this.leftBlock.arrange(g2, c3);
+-            w[2] = size.width;
++            
+         }
+         h[3] = h[2];
+         if (this.rightBlock != null) {
+

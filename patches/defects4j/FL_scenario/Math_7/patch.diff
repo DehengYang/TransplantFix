@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_7/defects4j_Math_7/src/main/java/org/apache/commons/math3/ode/events/EventState.java	2022-05-03 04:26:55.545335826 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_7/mcrepair_sfl/patch/susp_4/donor_0/patch_4/EventState.java	2022-05-03 06:03:59.968181732 -0400
+@@ -193,7 +193,10 @@
+         throws MaxCountExceededException, NoBracketingException {
+ 
+         try {
+-            forward = interpolator.isForward();
++            t0 = interpolator.getPreviousTime();
++interpolator.setInterpolatedTime(t0);
++g0 = handler.g(t0, interpolator.getInterpolatedState());
++forward = interpolator.isForward();
+             final double t1 = interpolator.getCurrentTime();
+             final double dt = t1 - t0;
+             if (FastMath.abs(dt) < convergence) {
+

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_99/defects4j2_JacksonDatabind_99/src/main/java/com/fasterxml/jackson/databind/type/ReferenceType.java	2022-05-04 22:28:00.881969674 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_99/mcrepair_pfl/patch/susp_0/donor_0/patch_7/ReferenceType.java	2022-05-04 22:30:48.976027236 -0400
+@@ -166,7 +166,8 @@
+         sb.append(_class.getName());
+         sb.append('<');
+         sb.append(_referencedType.toCanonical());
+-        return sb.toString();
++        sb.append('>');
++return sb.toString();
+     }
+ 
+     /*
+

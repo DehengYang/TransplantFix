@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_23/defects4j2_Cli_23/src/java/org/apache/commons/cli/HelpFormatter.java	2022-05-03 09:51:24.533022691 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Cli_23/mcrepair_pfl/patch/susp_0/donor_0/patch_28/HelpFormatter.java	2022-05-03 09:57:06.733350784 -0400
+@@ -822,7 +822,8 @@
+         while (true)
+         {
+             int lastPos = pos;
+-            text = padding + text.substring(pos).trim();
++            width = (sb.length() > width) ? sb.length() : width;
++text = padding + text.substring(pos).trim();
+             pos = findWrapPos(text, width, 0);
+ 
+             if (pos == -1)
+

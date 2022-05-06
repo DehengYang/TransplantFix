@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_11/defects4j_Closure_11/src/com/google/javascript/jscomp/TypeCheck.java	2022-05-04 00:07:40.328063456 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Closure_11/mcrepair_pfl/patch/susp_0/donor_35/patch_4/TypeCheck.java	2022-05-04 00:25:31.051899961 -0400
+@@ -1305,7 +1305,8 @@
+     // Lots of types can appear on the left, a call to a void function can
+     // never be on the left. getPropertyType will decide what is acceptable
+     // and what isn't.
+-    Node property = n.getLastChild();
++    parent = n.getFirstChild();
++Node property = n.getLastChild();
+     Node objNode = n.getFirstChild();
+     JSType childType = getJSType(objNode);
+ 
+

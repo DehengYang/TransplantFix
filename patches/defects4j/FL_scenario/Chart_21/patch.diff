@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_21/defects4j_Chart_21/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java	2022-05-03 04:54:12.240392794 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_21/mcrepair_sfl/patch/susp_2/donor_4/patch_0/DefaultBoxAndWhiskerCategoryDataset.java	2022-05-03 05:27:41.787563415 -0400
+@@ -737,8 +737,7 @@
+      * the current bounds.
+      */
+     private void updateBounds() {
+-        this.minimumRangeValue = Double.NaN;
+-        this.maximumRangeValue = Double.NaN;
++        minimumRangeValue++;
+     }
+     
+     /**
+

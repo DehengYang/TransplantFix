@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_23/defects4j_Math_23/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java	2022-05-02 16:08:23.373076270 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_23/mcrepair_pfl/patch/susp_0/donor_26/patch_26/BrentOptimizer.java	2022-05-02 17:21:08.907065996 -0400
+@@ -144,7 +144,8 @@
+         double fv = fx;
+         double fw = fx;
+ 
+-        UnivariatePointValuePair previous = null;
++        final double relativeThreshold = getStartValue();
++UnivariatePointValuePair previous = null;
+         UnivariatePointValuePair current
+             = new UnivariatePointValuePair(x, isMinim ? fx : -fx);
+         // Best point encountered so far (which is the initial guess).
+

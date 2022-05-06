@@ -1,0 +1,23 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_1/defects4j_Chart_1/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2022-05-03 07:37:46.633204697 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_1/mcrepair_pfl/patch/susp_0/donor_3/patch_6/AbstractCategoryItemRenderer.java	2022-05-03 07:43:12.277310647 -0400
+@@ -1795,9 +1795,7 @@
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+         if (dataset != null) {
+-            return result;
+-        }
+-        int seriesCount = dataset.getRowCount();
++            int seriesCount = dataset.getRowCount();
+         if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+             for (int i = 0; i < seriesCount; i++) {
+                 if (isSeriesVisibleInLegend(i)) {
+@@ -1819,6 +1817,8 @@
+             }
+         }
+         return result;
++        }
++        return result;
+     }
+ 
+     /**
+

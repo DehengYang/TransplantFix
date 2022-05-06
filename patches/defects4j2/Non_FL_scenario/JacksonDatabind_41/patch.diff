@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_41/defects4j2_JacksonDatabind_41/src/main/java/com/fasterxml/jackson/databind/type/TypeFactory.java	2022-05-03 15:44:35.040815761 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_41/mcrepair_pfl/patch/susp_0/donor_0/patch_0/TypeFactory.java	2022-05-03 15:47:18.900090726 -0400
+@@ -599,7 +599,8 @@
+      */
+     @Deprecated
+     public JavaType constructType(Type type, Class<?> contextClass) {
+-        return constructType(type, constructType(contextClass));
++        return _fromAny(null, type, EMPTY_BINDINGS);
++
+     }
+ 
+     /**
+

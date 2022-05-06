@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_102/defects4j2_JacksonDatabind_102/src/main/java/com/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase.java	2022-05-02 21:02:54.919110775 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_102/mcrepair_pfl/patch/susp_0/donor_29/patch_0/DateTimeSerializerBase.java	2022-05-02 21:58:15.658801722 -0400
+@@ -64,6 +64,8 @@
+     {
+         // Note! Should not skip if `property` null since that'd skip check
+         // for config overrides, in case of root value
++if (_useTimestamp != null)  
++
+         if (property == null) {
+             return this;
+         }
+

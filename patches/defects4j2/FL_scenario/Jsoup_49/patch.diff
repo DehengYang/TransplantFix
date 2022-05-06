@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_49/defects4j2_Jsoup_49/src/main/java/org/jsoup/nodes/Node.java	2022-05-03 01:20:13.107573456 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_49/mcrepair_sfl/patch/susp_5/donor_17/patch_0/Node.java	2022-05-03 02:17:35.040144610 -0400
+@@ -436,7 +436,11 @@
+     }
+ 
+     protected void addChildren(int index, Node... children) {
+-        Validate.noNullElements(children);
++        if (parent() != null) {
++parent().addChildren(siblingIndex()+1, children);
++}
++
++Validate.noNullElements(children);
+         ensureChildNodes();
+         for (int i = children.length - 1; i >= 0; i--) {
+             Node in = children[i];
+

@@ -1,0 +1,23 @@
+bin_java: target/classes
+bin_test: target/tests
+classpath:
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/lib/junit-4.11.jar
+- /home/apr/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/junit/junit/4.12/junit-4.12.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/lib/junit/junit/4.12/junit-4.12.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/lib/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/lib/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/lib/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar
+- /mnt/data/TransplantFix/datasets/defects4j2/defects4j/framework/projects/Codec/lib/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+classpath_compile: []
+classpath_compile_relative:
+- /target/classes
+classpath_relative:
+- /target/classes
+- /src/main/resources
+- /target/tests
+- /src/main/resources/commons-lang3-3.8.1.jar
+src_java: src/main/java
+src_test: src/test/java

@@ -1,0 +1,13 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_13/defects4j_Chart_13/source/org/jfree/chart/block/BorderArrangement.java	2022-05-04 05:55:26.605324310 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Chart_13/mcrepair_sfl/patch/susp_1/donor_7/patch_48/BorderArrangement.java	2022-05-04 06:29:37.255667034 -0400
+@@ -320,7 +320,8 @@
+             h[4] = size.height;
+         }
+         double height = h[0] + h[1] + Math.max(h[2], Math.max(h[3], h[4]));
+-        return arrange(container, g2, new RectangleConstraint(width, height));
++        return new Size2D(width, height);
++
+     }
+ 
+     /**
+

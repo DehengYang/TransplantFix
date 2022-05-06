@@ -1,0 +1,12 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_75/defects4j2_Jsoup_75/src/main/java/org/jsoup/nodes/Attributes.java	2022-05-03 11:27:45.618360829 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_Jsoup_75/mcrepair_pfl/patch/susp_0/donor_2/patch_4/Attributes.java	2022-05-03 11:29:06.048705552 -0400
+@@ -316,6 +316,8 @@
+             accum.append(' ').append(key);
+ 
+             // collapse checked=null, checked="", checked=checked; write out others
++if (!org.jsoup.nodes.Attribute.shouldCollapseAttribute(key, val, out))  
++
+             if (!(out.syntax() == Document.OutputSettings.Syntax.html
+                 && (val == null || val.equals(key) && Attribute.isBooleanAttribute(key)))) {
+                 accum.append("=\"");
+

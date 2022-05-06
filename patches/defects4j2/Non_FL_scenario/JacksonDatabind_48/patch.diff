@@ -1,0 +1,15 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_48/defects4j2_JacksonDatabind_48/src/main/java/com/fasterxml/jackson/databind/SerializationConfig.java	2022-05-04 07:32:47.418674283 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j2/defects4j2_JacksonDatabind_48/mcrepair_pfl/patch/susp_1/donor_0/patch_1/SerializationConfig.java	2022-05-04 07:42:32.996683539 -0400
+@@ -862,7 +862,10 @@
+     {
+         VisibilityChecker<?> vchecker = super.getDefaultVisibilityChecker();
+         // then global overrides (disabling)
+-        if (!isEnabled(MapperFeature.AUTO_DETECT_GETTERS)) {
++        if (!isEnabled(MapperFeature.AUTO_DETECT_SETTERS)) {
++            vchecker = vchecker.withSetterVisibility(Visibility.NONE);
++
++        }if (!isEnabled(MapperFeature.AUTO_DETECT_GETTERS)) {
+             vchecker = vchecker.withGetterVisibility(Visibility.NONE);
+         }
+         if (!isEnabled(MapperFeature.AUTO_DETECT_IS_GETTERS)) {
+

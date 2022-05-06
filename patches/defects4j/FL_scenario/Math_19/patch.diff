@@ -1,0 +1,16 @@
+--- /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_19/defects4j_Math_19/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2022-05-04 11:22:23.845585729 -0400
++++ /mnt/data/2021_11_multi_chunk_repair/APRConfig/results_defects4j/defects4j_Math_19/mcrepair_sfl/patch/susp_2/donor_23/patch_8/CMAESOptimizer.java	2022-05-04 13:21:20.787498450 -0400
+@@ -591,7 +591,11 @@
+         double sumw = 0;
+         double sumwq = 0;
+         for (int i = 0; i < mu; i++) {
+-            double w = weights.getEntry(i, 0);
++            if (stopTolHistFun > sumwq) {
++throw new NumberIsTooLargeException(stopTolHistFun, sumwq, true);
++}
++
++double w = weights.getEntry(i, 0);
+             sumw += w;
+             sumwq += w * w;
+         }
+
