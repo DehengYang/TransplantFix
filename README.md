@@ -13,6 +13,12 @@
 
 This repository consists of all relevant artifacts of TransplantFix.
 
+## TODO List
+
++ Integration into [Repairnator](https://github.com/eclipse/repairnator)
+  (https://github.com/eclipse/repairnator/issues/1257)
++ Improve Transplantfix to better assist in real-world manual debugging.
+
 ## 1. TransplantFix Framework
 
 The framework of TransplantFix is presented as follows:
