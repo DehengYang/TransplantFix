@@ -9,7 +9,8 @@
     - [2.4. Execution](#24-execution)
   - [3. Structure](#3-structure)
   - [4. Literature Review](#4-literature-review)
-  - [5. LICENSE](#5-license)
+  - [5. Repair Logs](#5-repair-logs)
+  - [6. LICENSE](#6-license)
 
 This repository consists of all relevant artifacts of TransplantFix.
 
@@ -156,7 +157,10 @@ Apart from the literature review data available at [literature review](./literat
 | 41 | Recoder | 2021 | https://github.com/pkuzqh/Recoder | A syntax-guided edit decoder for neural program repair | ESEC/FSE |
 | 42 | RewardRepair | 2022 | https://anonymous.4open.science/r/RewardRepair/README.md | Neural Program Repair with Execution-based Backpropagation | ICSE |
 
+## 5. Repair Logs
 
-## 5. LICENSE
+The complete repair logs of TransplantFix on Defects4J v1.2 and v2.0 [https://doi.org/10.6084/m9.figshare.21716738.v1](https://doi.org/10.6084/m9.figshare.21716738.v1).
+
+## 6. LICENSE
 
 The repository is licensed under the [GNU GPLv3 license](https://www.gnu.org/licenses/gpl-3.0-standalone.html). See [LICENSE](./LICENSE) for details.
