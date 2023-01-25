@@ -12,7 +12,7 @@
   - [5. Repair Logs](#5-repair-logs)
   - [6. LICENSE](#6-license)
 
-This repository consists of all relevant artifacts of TransplantFix.
+This repository consists of all relevant artifacts of ASE'22 paper "TransplantFix: Graph Differencing-based Code Transplantation for Automated Program Repair".
 
 ## TODO List
 
